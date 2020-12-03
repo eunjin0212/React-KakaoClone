@@ -12,7 +12,7 @@ export default () => (
   <Router>
     <>
       <Switch>
-        <Route path exact component={Navgation} />
+        <Route path="/" exact component={Navgation} />
         <Redirect from="*" to="/" />
       </Switch>
     </>
