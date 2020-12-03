@@ -14,7 +14,7 @@
 > 1. 파일 구조 짜기 [React File Structure](https://ko.reactjs.org/docs/faq-structure.html)
 > 2. 카카오톡 보고 구상하기
 
-#### 만들면서 체크 ✅
+#### Check List ✅
 
 > - git commit message 신경써서 push하기
 > - Hooks
