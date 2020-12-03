@@ -2,7 +2,7 @@
 
 개쩌는 카카오톡을 만들어보자
 
-### 만드는 조건
+## 만드는 조건
 
 > 1. 함수형 컴포넌트만 사용할 것 (Hooks)
 > 2. 스크린 하나는 무조건 컴포넌트 단위로 쪼개서 만들 것
@@ -16,5 +16,7 @@
 
 #### Check List ✅
 
-> - git commit message 신경써서 push하기
-> - Hooks
+> [o] git commit message 신경써서 push하기
+> [o] Hooks
+> [o] Make Loading Screen
+> [ ] Make Navigation

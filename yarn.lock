@@ -9057,6 +9057,11 @@ react-refresh@^0.8.3:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"
   integrity sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==
 
+react-reset@0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/react-reset/-/react-reset-0.0.0.tgz#f5c029b23e05c4230c80f909de8077dcf864794e"
+  integrity sha1-9cApsj4FxCMMgPkJ3oB33PhkeU4=
+
 react-router-dom@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-5.2.0.tgz#9e65a4d0c45e13289e66c7b17c7e175d0ea15662"
