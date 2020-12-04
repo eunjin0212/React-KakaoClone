@@ -8,15 +8,16 @@ import ClickComment from "../Screens/images/ClickComment.png";
 import User from "../Screens/images/user.png";
 
 const NaviContainer = styled.div`
+  position: fixed;
   bottom: 0;
   width: 100%;
-  height: 44px;
-  box-shadow: 0 -5px 5px -5px #bdc3c7;
+  height: 50px;
+  box-shadow: 0 -5px 10px -5px #e0e0e0;
 `;
 const Navi = styled.div`
   display: flex;
   justify-content: space-between;
-  background-color: yellow;
+  background-color: #f9f9fa;
 `;
 const Item = styled.div`
   width: 100%;
