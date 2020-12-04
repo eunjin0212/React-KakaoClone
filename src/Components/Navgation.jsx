@@ -4,6 +4,8 @@ import styled from "styled-components";
 import clickUser from "../Screens/images/clickUser.png";
 import Comment from "../Screens/images/comment.png";
 import Setting from "../Screens/images/setting.png";
+import ClickComment from "../Screens/images/ClickComment.png";
+import User from "../Screens/images/user.png";
 
 const NaviContainer = styled.div`
   bottom: 0;
@@ -32,7 +34,6 @@ const NaviLink = styled(Link)`
     width: 28px;
   }
   span {
-    font-weight: 700;
     font-size: 40px;
     text-align: center;
   }
@@ -46,21 +47,33 @@ const Navigation = ({ location: { pathname } }) => {
         <Navi>
           <Item aria-current={pathname === "/"}>
             <NaviLink to="/">
-              <img src={clickUser} alt="" />
+              {pathname === "/" ? (
+                <img src={clickUser} alt="" />
+              ) : (
+                <img src={User} alt="" />
+              )}
             </NaviLink>
           </Item>
           <Item aria-current={pathname === "/chat"}>
-            <NaviLink to="/">
-              <img src={Comment} alt="" />
+            <NaviLink to="/chat">
+              {pathname === "/chat" ? (
+                <img src={ClickComment} alt="" />
+              ) : (
+                <img src={Comment} alt="" />
+              )}
             </NaviLink>
           </Item>
-          <Item aria-current={pathname === "/"}>
-            <NaviLink to="/">
-              <span>#</span>
+          <Item aria-current={pathname === "/shap"}>
+            <NaviLink to="/shap">
+              {pathname === "/shap" ? (
+                <span style={{ fontWeight: "700" }}>#</span>
+              ) : (
+                <span style={{ fontWeight: "500" }}>#</span>
+              )}
             </NaviLink>
           </Item>
-          <Item aria-current={pathname === "/"}>
-            <NaviLink to="/">
+          <Item aria-current={pathname === "/setting"}>
+            <NaviLink to="/setting">
               <img src={Setting} alt="" />
             </NaviLink>
           </Item>
