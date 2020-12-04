@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link, withRouter } from "react-router-dom";
+import ChatHeader from "../Screens/Chats/ChatHeader";
 
 //Image
 import Signal from "../Screens/images/signal.png";
@@ -24,6 +25,8 @@ const TimeContainer = styled.div`
   font-size: 18px;
   align-item: center;
 `;
+const Items = styled.div``;
+
 const IconContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -42,7 +45,7 @@ const Header = ({ location: { pathname } }) => {
     let hours = (date.getHours() + 24) % 12 || 12;
     hours = hours < 10 ? `0${hours}` : hours;
     let minutes = date.getMinutes();
-    minutes = minutes < 10 ? 0`${minutes}` : minutes;
+    minutes = minutes < 10 ? `0${minutes}` : minutes;
 
     return (
       <>
@@ -54,10 +57,10 @@ const Header = ({ location: { pathname } }) => {
     <>
       <IconContainer>
         <IconsItems>
-          <img src={Signal} width="18px" height="18px" alt="" />
+          <img src={Signal} width="18px" height="15px" alt="" />
         </IconsItems>
         <IconsItems>
-          <img src={Wifi} width="18px" height="18px" alt="" />
+          <img src={Wifi} width="18px" height="15px" alt="" />
         </IconsItems>
         <IconsItems>
           <img src={Battery} width="18px" height="18px" alt="" />
@@ -65,7 +68,6 @@ const Header = ({ location: { pathname } }) => {
       </IconContainer>
     </>
   );
-  const chatHeader = () => <></>;
 
   return (
     <>
@@ -74,15 +76,7 @@ const Header = ({ location: { pathname } }) => {
           {getTime()}
           {icons()}
         </CommonItems>
-        {/* <Items aria-current={pathname === "/chat"}>
-          <Links to="/chat">{pathname === "/chat" ? getTime() : icons()}</Links>
-        </Items>
-        <Items aria-current={pathname === "/chat"}>
-          <Links to="/chat">{pathname === "/chat" ? getTime() : icons()}</Links>
-        </Items>
-        <Items aria-current={pathname === "/chat"}>
-          <Links to="/chat">{pathname === "/chat" ? getTime() : icons()}</Links>
-        </Items> */}
+        <ChatHeader />
       </Container>
     </>
   );
