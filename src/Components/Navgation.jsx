@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
+
+//Image
 import clickUser from "../Screens/images/clickUser.png";
 import Comment from "../Screens/images/comment.png";
 import Setting from "../Screens/images/setting.png";
