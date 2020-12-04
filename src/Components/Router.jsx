@@ -6,6 +6,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import Navgation from "./Navgation";
+import Header from "./Header";
 import Home from "../Screens/Home";
 import Chat from "../Screens/Chat";
 import Shap from "../Screens/Shap";
@@ -15,6 +16,7 @@ import Setting from "../Screens/Setting";
 export default () => (
   <Router>
     <>
+      <Header />
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/chat" component={Chat} />
