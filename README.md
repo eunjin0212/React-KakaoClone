@@ -16,10 +16,10 @@
 
 #### Check List ✅
 
-> [o] git commit message 신경써서 push하기
-> [o] Hooks
-> [o] Make Loading Screen
-> [o] Make Navigation
+> - [o] git commit message 신경써서 push하기
+> - [o] Hooks
+> - [o] Make Loading Screen
+> - [o] Make Navigation
 
 ### Other
 
