@@ -5,7 +5,7 @@ import Header from "./Header";
 import Friends from "../Screens/Friends/Friends";
 import Chats from "../Screens/Chats/Chats";
 import Shap from "../Screens/Shap/Shap";
-import Setting from "../Screens/Setting";
+import Setting from "../Screens/Setting/Setting";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => (

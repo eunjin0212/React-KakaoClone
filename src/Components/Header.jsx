@@ -4,6 +4,7 @@ import { Link, withRouter } from "react-router-dom";
 import ChatHeader from "../Screens/Chats/ChatHeader";
 import FriendHeader from "../Screens/Friends/FriendHeader";
 import ShapHeaders from "../Screens/Shap/ShapHeader";
+import SettingHeaders from "../Screens/Setting/SettingHeader";
 
 //Image
 import Signal from "../Screens/images/signal.png";
@@ -82,6 +83,19 @@ const Header = ({ location: { pathname } }) => {
       </>
     );
   };
+  const SettingHeader = () => {
+    return (
+      <>
+        {pathname === "/setting" ? (
+          <>
+            <SettingHeaders />
+          </>
+        ) : (
+          ""
+        )}
+      </>
+    );
+  };
   const ShapHeader = () => (
     <>
       {pathname === "/shap" ||
@@ -119,6 +133,7 @@ const Header = ({ location: { pathname } }) => {
         {chatHeaders()}
         {FriendstHeader()}
         {ShapHeader()}
+        {SettingHeader()}
       </Container>
     </>
   );
