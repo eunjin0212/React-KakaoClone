@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { Link, withRouter } from "react-router-dom";
 import ChatHeader from "../Screens/Chats/ChatHeader";
+import FriendHeader from "../Screens/Friends/FriendHeader";
+import ShapHeaders from "../Screens/Shap/ShapHeader";
 
 //Image
 import Signal from "../Screens/images/signal.png";
@@ -29,7 +31,7 @@ const Items = styled.div``;
 
 const IconContainer = styled.div`
   display: flex;
-  justify-content: center;
+  align-items: center;
 `;
 const IconsItems = styled.div`
   &:not(:last-child) {
@@ -62,11 +64,41 @@ const Header = ({ location: { pathname } }) => {
             <ChatHeader />
           </>
         ) : (
-          console.log("no chats")
+          ""
         )}
       </>
     );
   };
+  const FriendstHeader = () => {
+    return (
+      <>
+        {pathname === "/" ? (
+          <>
+            <FriendHeader />
+          </>
+        ) : (
+          ""
+        )}
+      </>
+    );
+  };
+  const ShapHeader = () => (
+    <>
+      {pathname === "/shap" ||
+      pathname === "/covid19" ||
+      pathname === "/news" ||
+      pathname === "/kakaotv" ||
+      pathname === "/entertain" ||
+      pathname === "/fun" ||
+      pathname === "/sports" ? (
+        <>
+          <ShapHeaders />
+        </>
+      ) : (
+        ""
+      )}
+    </>
+  );
   return (
     <>
       <Container>
@@ -85,6 +117,8 @@ const Header = ({ location: { pathname } }) => {
           </IconContainer>
         </CommonItems>
         {chatHeaders()}
+        {FriendstHeader()}
+        {ShapHeader()}
       </Container>
     </>
   );

@@ -32,7 +32,7 @@ const OpenChateText = styled.span``;
 
 const ChatIcons = styled.div`
   display: flex;
-  justify-content: center;
+  align-items: center;
 `;
 const ChatItems = styled.div`
   &:not(:last-child) {

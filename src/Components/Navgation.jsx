@@ -20,6 +20,8 @@ const Navi = styled.div`
   display: flex;
   justify-content: space-between;
   background-color: #f9f9fa;
+  height: 100%;
+  width: 100%;
 `;
 const Item = styled.div`
   width: 100%;
