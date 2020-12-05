@@ -36,6 +36,7 @@ const ShapText = styled.button`
   margin-right: 14px;
   font-size: 20px;
   border: none;
+  padding-bottom: 10px;
   background-color: inherit;
   border-bottom: 2px solid
     ${(props) => (props.current ? "#191919" : "transparent")};
