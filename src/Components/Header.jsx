@@ -14,19 +14,28 @@ import Battery from "../Screens/images/battery.png";
 const Container = styled.div`
   position: absolute;
   width: 100%;
-  height: 40px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  background-color: wheat;
 `;
 const CommonItems = styled.div`
   position: relative;
   top: 0;
   display: flex;
   justify-content: space-between;
-  margin: 15px 30px;
+  padding: 15px 30px;
 `;
 const TimeContainer = styled.div`
+  position: relative;
   font-weight: 700;
   font-size: 18px;
-  align-item: center;
+  display: flex;
+  justify-content: center;
+  box-sizing: content-box;
+  text-align: center;
+  height: 20px;
+  background-color: red;
 `;
 const Items = styled.div``;
 

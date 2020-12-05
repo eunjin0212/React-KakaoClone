@@ -8,9 +8,11 @@ import Cog from "../images/cog.png";
 
 const SettingContainer = styled.div`
   position: absolute;
+  top: 50px;
   width: 100%;
   height: 47px;
   align-items: center;
+  background-color: white;
 `;
 const SettingHeaders = styled.div`
   position: relative;

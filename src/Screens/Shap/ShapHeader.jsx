@@ -6,9 +6,11 @@ import Arrow from "../images/arrow.png";
 
 const ShapContainer = styled.div`
   position: absolute;
+  top: 50px;
   width: 100%;
   height: 47px;
   align-items: center;
+  background-color: white;
 `;
 const ShapHeaders = styled.div`
   position: relative;
@@ -22,7 +24,6 @@ const ShapScroll = styled.div`
   width: 100%;
 `;
 const ShapTexts = styled.div`
-  font-size: 20px;
   box-sizing: content-box;
   width: 100%;
   padding: 10px;
@@ -31,8 +32,11 @@ const ShapTexts = styled.div`
   white-space: nowrap;
   scroll-behavior: smooth;
 `;
-const ShapText = styled.span`
+const ShapText = styled.button`
   margin-right: 14px;
+  font-size: 20px;
+  border: none;
+  background-color: inherit;
   border-bottom: 2px solid
     ${(props) => (props.current ? "#191919" : "transparent")};
   cursor: pointer;
@@ -43,17 +47,15 @@ const ShapIcons = styled.div`
   display: flex;
   align-items: center;
 `;
-const ShoapItems = styled.div`
-  &:not(:last-child) {
-    margin-right: 18px;
-  }
-`;
+const ShoapItems = styled.div``;
 const ShapLinks = styled(Link)``;
 
 const ShapHeader = ({ location: { pathname } }) => {
   const getStyle = (path) => ({
     color: pathname === path ? "#191919" : "#B6B6B6",
   });
+  //   const handleClick = (e, path) => (e.preventDefault(), {});
+  //# 추가 하는 이벤트 만들기
   return (
     <>
       <ShapContainer>
