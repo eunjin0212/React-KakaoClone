@@ -17,7 +17,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   z-index: 1;
-  background-color: wheat;
+  background-color: white;
 `;
 const CommonItems = styled.div`
   position: relative;
@@ -35,7 +35,6 @@ const TimeContainer = styled.div`
   box-sizing: content-box;
   text-align: center;
   height: 20px;
-  background-color: red;
 `;
 const Items = styled.div``;
 

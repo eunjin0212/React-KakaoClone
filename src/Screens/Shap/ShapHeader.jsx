@@ -26,7 +26,7 @@ const ShapScroll = styled.div`
 const ShapTexts = styled.div`
   box-sizing: content-box;
   width: 100%;
-  padding: 10px;
+  padding: 0px 10px;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
