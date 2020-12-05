@@ -53,30 +53,38 @@ const Header = ({ location: { pathname } }) => {
       </>
     );
   };
-  const icons = () => (
-    <>
-      <IconContainer>
-        <IconsItems>
-          <img src={Signal} width="18px" height="15px" alt="" />
-        </IconsItems>
-        <IconsItems>
-          <img src={Wifi} width="18px" height="15px" alt="" />
-        </IconsItems>
-        <IconsItems>
-          <img src={Battery} width="18px" height="18px" alt="" />
-        </IconsItems>
-      </IconContainer>
-    </>
-  );
 
+  const chatHeaders = () => {
+    return (
+      <>
+        {pathname === "/chats" || pathname === "/openchats" ? (
+          <>
+            <ChatHeader />
+          </>
+        ) : (
+          console.log("no chats")
+        )}
+      </>
+    );
+  };
   return (
     <>
       <Container>
         <CommonItems>
           {getTime()}
-          {icons()}
+          <IconContainer>
+            <IconsItems>
+              <img src={Signal} width="18px" height="15px" alt="" />
+            </IconsItems>
+            <IconsItems>
+              <img src={Wifi} width="18px" height="15px" alt="" />
+            </IconsItems>
+            <IconsItems>
+              <img src={Battery} width="18px" height="18px" alt="" />
+            </IconsItems>
+          </IconContainer>
         </CommonItems>
-        <ChatHeader />
+        {chatHeaders()}
       </Container>
     </>
   );

@@ -59,7 +59,7 @@ const Navigation = ({ location: { pathname } }) => {
           </Item>
           <Item aria-current={pathname === "/chats"}>
             <NaviLink to="/chats">
-              {pathname === "/chats" ? (
+              {pathname === "/chats" || pathname === "/openchats" ? (
                 <img src={ClickComment} alt="" />
               ) : (
                 <img src={Comment} alt="" />
