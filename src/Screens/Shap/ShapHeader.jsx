@@ -63,7 +63,6 @@ const ShapHeader = ({ location: { pathname } }) => {
         <ShapHeaders>
           <ShapTexts>
             <ShapScroll>
-              {" "}
               <ShapText
                 current={pathname === "/covid19"}
                 style={getStyle("/covid19")}
