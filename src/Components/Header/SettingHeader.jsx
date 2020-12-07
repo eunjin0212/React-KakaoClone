@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-import Search from "../images/search.png";
-import QRcode from "../images/qrcode.png";
-import Music from "../images/music.png";
-import Cog from "../images/cog.png";
+import Search from "../../Screens/images/search.png";
+import QRcode from "../../Screens/images/qrcode.png";
+import Music from "../../Screens/images/music.png";
+import Cog from "../../Screens/images/cog.png";
 
 const SettingContainer = styled.div`
   position: absolute;

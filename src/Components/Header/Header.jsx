@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import { Link, withRouter } from "react-router-dom";
-import ChatHeader from "../Screens/Chats/ChatHeader";
-import FriendHeader from "../Screens/Friends/FriendHeader";
-import ShapHeaders from "../Screens/Shap/ShapHeader";
-import SettingHeaders from "../Screens/Setting/SettingHeader";
+import ChatHeader from "./ChatHeader";
+import FriendHeader from "./FriendHeader";
+import ShapHeaders from "./ShapHeader";
+import SettingHeaders from "./SettingHeader";
 
 //Image
-import Signal from "../Screens/images/signal.png";
-import Wifi from "../Screens/images/wifi.png";
-import Battery from "../Screens/images/battery.png";
+import Signal from "../../Screens/images/signal.png";
+import Wifi from "../../Screens/images/wifi.png";
+import Battery from "../../Screens/images/battery.png";
 
 const Container = styled.div`
   position: absolute;

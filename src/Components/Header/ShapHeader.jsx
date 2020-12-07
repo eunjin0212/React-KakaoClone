@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 
-import Arrow from "../images/arrow.png";
+import Arrow from "../../Screens/images/arrow.png";
 
 const ShapContainer = styled.div`
   position: absolute;

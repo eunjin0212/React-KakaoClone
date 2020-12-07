@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-import Search from "../images/search.png";
-import OpenChat from "../images/openChat.png";
-import Music from "../images/music.png";
-import Cog from "../images/cog.png";
+import Search from "../../Screens/images/search.png";
+import OpenChat from "../../Screens/images/openChat.png";
+import Music from "../../Screens/images/music.png";
+import Cog from "../../Screens/images/cog.png";
 
 const FriendContainer = styled.div`
   position: absolute;
