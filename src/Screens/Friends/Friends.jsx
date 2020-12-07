@@ -66,17 +66,21 @@ const FriendsRear = styled.div`
 `;
 
 const FriendsContainer = () => {
-  const [data] = useState({
+  const [title] = useState({
     title: ["생일인 친구", "추천친구", "채널", "친구 1"],
+  });
+  const [content] = useState({
     content: [
       "친구의 생일을 확인해보세요!",
       "새로운 친구를 만나보세요",
       "채널",
       "김은진",
     ],
-    num: [5, 100, 23],
-    sign: [">", ">", ">"],
   });
+
+  const [num] = useState({ num: ["5", "100", "23"] });
+  const [sign] = useState({ sign: [">", ">", ">"] });
+
   const [img] = useState({
     src: [cake, smile, channel, profile],
   });
@@ -91,7 +95,7 @@ const FriendsContainer = () => {
           </div>
         </Profile>
         <Box>
-          {Object.values(data.title).map((title, i) => {
+          {Object.values(title.title).map((title, i) => {
             return (
               <>
                 <FriendsMain>
@@ -102,11 +106,11 @@ const FriendsContainer = () => {
                   <FriendsMainHeader>
                     <FriendsFront>
                       <Image src={img.src[i]} />
-                      <div>{data.content[i]}</div>
+                      <div>{content.content[i]}</div>
                     </FriendsFront>
                     <FriendsRear>
-                      {data.num[i]}
-                      <div>{data.sign[i]}</div>
+                      {num.num[i]}
+                      <div>{sign.sign[i]}</div>
                     </FriendsRear>
                   </FriendsMainHeader>
                 </FriendsMain>
