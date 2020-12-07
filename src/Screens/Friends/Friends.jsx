@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-//import { useFn, useData } from "../../Components/Context";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 
+//images
 import Me from "../images/bori-pro.jpg";
 import cake from "../images/cake.png";
-import chennel from "../images/chennel.png";
+import channel from "../images/channel.png";
 import smile from "../images/smile.png";
+import profile from "../images/profile.png";
 
+//styles
 const FriendContainer = styled.div`
   width: 100%;
   position: relative;
@@ -18,8 +19,7 @@ const Profile = styled.div`
   display: flex;
   justify-content: start;
   align-items: center;
-  height: 70px;
-  border-bottom: 1px solid #ececec;
+  height: 60px;
   img {
     width: 50px;
     height: 50px;
@@ -33,12 +33,11 @@ const Name = styled.span`
 `;
 
 const Box = styled.div`
-  margin: 13px 0px;
+  margin: 10px 0px;
 `;
 const FriendsMain = styled.div`
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #ececec;
+  padding: 10px 0px;
+  border-top: 1px solid #ececec;
 `;
 const FriendsText = styled.div`
   display: flex;
@@ -66,26 +65,24 @@ const FriendsRear = styled.div`
   color: #a1a1a1;
 `;
 
-const FriendsBox = styled.div``;
-const Friend = styled.div``;
-
 const FriendsContainer = () => {
   const [data] = useState({
-    title: ["생일인 친구", "추천친구", "채널"],
+    title: ["생일인 친구", "추천친구", "채널", "친구 1"],
     content: [
       "친구의 생일을 확인해보세요!",
       "새로운 친구를 만나보세요",
       "채널",
+      "김은진",
     ],
     num: [5, 100, 23],
+    sign: [">", ">", ">"],
   });
   const [img] = useState({
-    src: [cake, smile, chennel],
+    src: [cake, smile, channel, profile],
   });
-  console.log(img.src[0]);
+
   return (
     <>
-      {console.log(data.img)}
       <FriendContainer>
         <Profile>
           <img src={Me} alt="" />
@@ -94,39 +91,32 @@ const FriendsContainer = () => {
           </div>
         </Profile>
         <Box>
-          {Object.values(data.title).map((title, i) => (
-            <FriendsMain>
-              <FriendsText>
-                <div>{title}</div>
-                <div>^</div>
-              </FriendsText>
-              <FriendsMainHeader>
-                <FriendsFront>
-                  <Image src={img.src[i]} />
-                  <div>{data.content[i]}</div>
-                </FriendsFront>
-                <FriendsRear>
-                  {data.num[i]}
-                  <div>></div>
-                </FriendsRear>
-              </FriendsMainHeader>
-            </FriendsMain>
-          ))}
+          {Object.values(data.title).map((title, i) => {
+            return (
+              <>
+                <FriendsMain>
+                  <FriendsText>
+                    <div>{title}</div>
+                    <div>^</div>
+                  </FriendsText>
+                  <FriendsMainHeader>
+                    <FriendsFront>
+                      <Image src={img.src[i]} />
+                      <div>{data.content[i]}</div>
+                    </FriendsFront>
+                    <FriendsRear>
+                      {data.num[i]}
+                      <div>{data.sign[i]}</div>
+                    </FriendsRear>
+                  </FriendsMainHeader>
+                </FriendsMain>
+              </>
+            );
+          })}
         </Box>
-        <FriendsBox>
-          <Friend></Friend>
-        </FriendsBox>
       </FriendContainer>
     </>
   );
 };
 
 export default FriendsContainer;
-
-// FriendsContainer.propTypes = {
-//   mainTitle: PropTypes.string,
-//   mainTitleSign: PropTypes.string,
-//   mainContents: PropTypes.string,
-//   mainRear: PropTypes.number,
-//   mainRearSign: PropTypes.string,
-// };
