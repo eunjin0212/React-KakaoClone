@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 
@@ -52,11 +52,18 @@ const ShoapItems = styled.div``;
 const ShapLinks = styled(Link)``;
 
 const ShapHeader = ({ location: { pathname } }) => {
-  const getStyle = (path) => ({
-    color: pathname === path ? "#191919" : "#B6B6B6",
-  });
-  //   const handleClick = (e, path) => (e.preventDefault(), {});
-  //# 추가 하는 이벤트 만들기
+  const getStyle = (path) => {
+    return {
+      color: pathname === path ? "#191919" : "#B6B6B6",
+    };
+  };
+  // const handleClick = (e, path2) => {
+  //   e.target.innerText = [
+  //     pathname === path2 ? "#" + e.target.innerText : e.target.innerText,
+  //   ];
+  // };
+  // const addShap = useRef(null);
+
   return (
     <>
       <ShapContainer>
@@ -64,12 +71,17 @@ const ShapHeader = ({ location: { pathname } }) => {
           <ShapTexts>
             <ShapScroll>
               <ShapText
+                // ref={addShap}
+                // onClick={handleClick}
                 current={pathname === "/covid19"}
                 style={getStyle("/covid19")}
               >
                 <ShapLinks to="/covid19">코로나19</ShapLinks>
               </ShapText>
-              <ShapText current={pathname === "/news"} style={getStyle("/")}>
+              <ShapText
+                current={pathname === "/news"}
+                style={getStyle("/news")}
+              >
                 <ShapLinks to="/news">뉴스</ShapLinks>
               </ShapText>
               <ShapText

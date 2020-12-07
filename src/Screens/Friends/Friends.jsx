@@ -72,7 +72,6 @@ const Friend = styled.div``;
 const FriendsContainer = () => {
   const [data] = useState({
     title: ["생일인 친구", "추천친구", "채널"],
-    img: { url: { cake, smile, chennel } },
     content: [
       "친구의 생일을 확인해보세요!",
       "새로운 친구를 만나보세요",
@@ -80,7 +79,10 @@ const FriendsContainer = () => {
     ],
     num: [5, 100, 23],
   });
-
+  const [img] = useState({
+    src: [cake, smile, chennel],
+  });
+  console.log(img.src[0]);
   return (
     <>
       {console.log(data.img)}
@@ -100,7 +102,7 @@ const FriendsContainer = () => {
               </FriendsText>
               <FriendsMainHeader>
                 <FriendsFront>
-                  <Image src={data.img[i]} />
+                  <Image src={img.src[i]} />
                   <div>{data.content[i]}</div>
                 </FriendsFront>
                 <FriendsRear>
