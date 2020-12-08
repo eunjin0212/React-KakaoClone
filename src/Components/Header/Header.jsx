@@ -11,43 +11,6 @@ import Signal from "../../Screens/images/signal.png";
 import Wifi from "../../Screens/images/wifi.png";
 import Battery from "../../Screens/images/battery.png";
 
-const Container = styled.div`
-  position: absolute;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  z-index: 1;
-  background-color: white;
-`;
-const CommonItems = styled.div`
-  position: relative;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 30px;
-`;
-const TimeContainer = styled.div`
-  position: relative;
-  font-weight: 700;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  box-sizing: content-box;
-  text-align: center;
-  height: 20px;
-`;
-const Items = styled.div``;
-
-const IconContainer = styled.div`
-  display: flex;
-  align-items: center;
-`;
-const IconsItems = styled.div`
-  &:not(:last-child) {
-    margin-right: 4px;
-  }
-`;
-
 const Links = styled(Link)``;
 
 const Header = ({ location: { pathname } }) => {
@@ -147,3 +110,39 @@ const Header = ({ location: { pathname } }) => {
   );
 };
 export default withRouter(Header);
+
+const Container = styled.div`
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  background-color: white;
+`;
+const CommonItems = styled.div`
+  position: relative;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+`;
+const TimeContainer = styled.div`
+  position: relative;
+  font-weight: 700;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  box-sizing: content-box;
+  text-align: center;
+  height: 20px;
+`;
+
+const IconContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const IconsItems = styled.div`
+  &:not(:last-child) {
+    margin-right: 4px;
+  }
+`;

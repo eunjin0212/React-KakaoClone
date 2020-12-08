@@ -3,6 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import OpenChats from "../../Screens/Chats/OpenChats";
+import { ChatHeader } from "../BaseLabel";
 
 import Search from "../../Screens/images/search.png";
 import OpenChat from "../../Screens/images/openChat.png";
@@ -17,7 +18,7 @@ const ChatContainer = styled.div`
   align-items: center;
   background-color: white;
 `;
-const ChatHeaders = styled.div`
+const Menu = styled.div`
   position: relative;
   top: 0;
   display: flex;
@@ -25,12 +26,8 @@ const ChatHeaders = styled.div`
   margin: 15px 15px;
 `;
 const ChatTexts = styled.div`
-  font-size: 20px;
+  display: flex;
 `;
-const ChatText = styled.span`
-  margin-right: 14px;
-`;
-const OpenChateText = styled.span``;
 
 const ChatIcons = styled.div`
   display: flex;
@@ -43,27 +40,33 @@ const ChatItems = styled.div`
 `;
 const ChatLinks = styled(Link)``;
 
-const ChatHeader = ({ location: { pathname } }) => {
-  const getStyle = (path) => ({
-    color: pathname === path ? "#191919" : "#B6B6B6",
-  });
+const ChatHeaders = ({ location: { pathname } }) => {
+  const getStyle = (path) => {
+    return { color: pathname === path ? "#191919" : "#B6B6B6" };
+  };
+  const handleClick = (path) => {
+    console.log(path);
+    return { color: pathname === path ? "#191919" : "#B6B6B6" };
+  };
   return (
     <>
       <ChatContainer>
-        <ChatHeaders>
+        <Menu>
           <ChatTexts>
-            <ChatText
-              current={pathname === "/chats"}
-              style={getStyle("/chats")}
-            >
-              <ChatLinks to="/chats">채팅</ChatLinks>
-            </ChatText>
-            <OpenChateText
-              current={pathname === "/openchats"}
-              style={getStyle("/openchats")}
-            >
-              <ChatLinks to="/openchats">오픈채팅</ChatLinks>
-            </OpenChateText>
+            <ChatLinks to="/chats">
+              <ChatHeader
+                current={pathname === "/chats"}
+                title="채팅"
+                onClick={handleClick("/chats")}
+              />
+            </ChatLinks>
+            <ChatLinks to="/openchats">
+              <ChatHeader
+                current={pathname === "/openchats"}
+                title="오픈채팅"
+                onClick={handleClick("/openchats")}
+              />
+            </ChatLinks>
           </ChatTexts>
 
           <ChatIcons>
@@ -80,7 +83,7 @@ const ChatHeader = ({ location: { pathname } }) => {
               <img src={Cog} width="18px" height="18px" alt="" />
             </ChatItems>
           </ChatIcons>
-        </ChatHeaders>
+        </Menu>
       </ChatContainer>
       <Router>
         <Switch>
@@ -90,4 +93,4 @@ const ChatHeader = ({ location: { pathname } }) => {
     </>
   );
 };
-export default withRouter(ChatHeader);
+export default withRouter(ChatHeaders);
