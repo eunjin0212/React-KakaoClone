@@ -14,37 +14,27 @@ const ChatHeaders = ({ location: { pathname } }) => {
   return (
     <>
       <ChatContainer>
-        <Menu>
-          <ChatTexts>
-            <ChatLinks
-              to="/chats"
-              style={{ color: pathname === "/chats" ? "black" : "#cccccc" }}
-            >
-              <Header current={pathname === "/chats"} title="채팅" />
-            </ChatLinks>
-            <ChatLinks
-              to="/openchats"
-              style={{ color: pathname === "/openchats" ? "black" : "#cccccc" }}
-            >
-              <Header current={pathname === "/openchats"} title="오픈채팅" />
-            </ChatLinks>
-          </ChatTexts>
+        <ChatTexts>
+          <ChatLinks
+            to="/chats"
+            style={{ color: pathname === "/chats" ? "black" : "#cccccc" }}
+          >
+            <Header current={pathname === "/chats"} title="채팅" />
+          </ChatLinks>
+          <ChatLinks
+            to="/openchats"
+            style={{ color: pathname === "/openchats" ? "black" : "#cccccc" }}
+          >
+            <Header current={pathname === "/openchats"} title="오픈채팅" />
+          </ChatLinks>
+        </ChatTexts>
 
-          <ChatIcons>
-            <ChatItems>
-              <img src={Search} width="18px" height="18px" alt="" />
-            </ChatItems>
-            <ChatItems>
-              <img src={OpenChat} width="18px" height="18px" alt="" />
-            </ChatItems>
-            <ChatItems>
-              <img src={Music} width="18px" height="18px" alt="" />
-            </ChatItems>
-            <ChatItems>
-              <img src={Cog} width="18px" height="18px" alt="" />
-            </ChatItems>
-          </ChatIcons>
-        </Menu>
+        <ChatIcons>
+          {<img src={Search} width="18px" height="18px" alt="" />}
+          {<img src={OpenChat} width="18px" height="18px" alt="" />}
+          {<img src={Music} width="18px" height="18px" alt="" />}
+          {<img src={Cog} width="18px" height="18px" alt="" />}
+        </ChatIcons>
       </ChatContainer>
       <Router>
         <Switch>
@@ -57,20 +47,16 @@ const ChatHeaders = ({ location: { pathname } }) => {
 export default withRouter(ChatHeaders);
 
 const ChatContainer = styled.div`
-  position: absolute;
-  top: 50px;
-  width: 100%;
-  height: 47px;
+  height: 40px;
   align-items: center;
-  background-color: white;
-`;
-const Menu = styled.div`
   position: relative;
   top: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
   margin: 15px 15px;
 `;
+
 const ChatTexts = styled.div`
   display: flex;
 `;
@@ -78,10 +64,10 @@ const ChatTexts = styled.div`
 const ChatIcons = styled.div`
   display: flex;
   align-items: center;
-`;
-const ChatItems = styled.div`
-  &:not(:last-child) {
-    margin-right: 18px;
+  img {
+    &:not(:last-child) {
+      margin-right: 18px;
+    }
   }
 `;
 const ChatLinks = styled(Link)``;
