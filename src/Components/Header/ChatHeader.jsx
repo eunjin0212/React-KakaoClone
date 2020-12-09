@@ -53,7 +53,7 @@ const ChatContainer = styled.div`
   left: 0;
   display: flex;
   justify-content: space-between;
-  margin: 15px 15px;
+  margin: 15px 15px 10px 15px;
 `;
 
 const ChatMenu = styled.div`
