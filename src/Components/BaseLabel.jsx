@@ -1,9 +1,8 @@
 import PropTypes from "prop-types";
 import React from "react";
-import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 
-const FriendsChatHeader = ({ title, children }) => {
+export const Header = ({ title, children }) => {
   return (
     <>
       <Title>{title}</Title>
@@ -11,7 +10,7 @@ const FriendsChatHeader = ({ title, children }) => {
     </>
   );
 };
-FriendsChatHeader.propTypes = {
+Header.propTypes = {
   title: PropTypes.node,
   children: PropTypes.object,
 };
@@ -21,5 +20,3 @@ const Title = styled.div`
   margin-right: 14px;
   font-size: 20px;
 `;
-
-export default FriendsChatHeader;

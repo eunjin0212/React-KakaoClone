@@ -16,6 +16,7 @@ const globalStyles = createGlobalStyle`
         color: #2e363e;
         width: 100vw;
         height: 100vh;
+        user-select: none;
     }
 }
 `;

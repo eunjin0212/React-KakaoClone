@@ -11,8 +11,6 @@ import Signal from "../../Screens/images/signal.png";
 import Wifi from "../../Screens/images/wifi.png";
 import Battery from "../../Screens/images/battery.png";
 
-const Links = styled(Link)``;
-
 const Header = ({ location: { pathname } }) => {
   const getTime = () => {
     let date = new Date();
@@ -28,62 +26,42 @@ const Header = ({ location: { pathname } }) => {
     );
   };
 
-  const chatHeaders = () => {
-    return (
-      <>
-        {pathname === "/chats" || pathname === "/openchats" ? (
-          <>
-            <ChatHeader />
-          </>
-        ) : (
-          ""
-        )}
-      </>
-    );
-  };
-  const FriendstHeader = () => {
-    return (
-      <>
-        {pathname === "/" ? (
-          <>
-            <FriendHeader />
-          </>
-        ) : (
-          ""
-        )}
-      </>
-    );
-  };
-  const SettingHeader = () => {
-    return (
-      <>
-        {pathname === "/setting" ? (
-          <>
-            <SettingHeaders />
-          </>
-        ) : (
-          ""
-        )}
-      </>
-    );
-  };
-  const ShapHeader = () => (
-    <>
-      {pathname === "/shap" ||
+  const Headers = () => {
+    if (pathname === "/chats" || pathname === "/openchats") {
+      return (
+        <>
+          <ChatHeader />
+        </>
+      );
+    } else if (pathname === "/") {
+      return (
+        <>
+          <FriendHeader />
+        </>
+      );
+    } else if (pathname === "/setting") {
+      return (
+        <>
+          <SettingHeaders />
+        </>
+      );
+    } else if (
+      pathname === "/shap" ||
       pathname === "/covid19" ||
       pathname === "/news" ||
       pathname === "/kakaotv" ||
       pathname === "/entertain" ||
       pathname === "/fun" ||
-      pathname === "/sports" ? (
+      pathname === "/sports"
+    ) {
+      return (
         <>
           <ShapHeaders />
         </>
-      ) : (
-        ""
-      )}
-    </>
-  );
+      );
+    }
+  };
+
   return (
     <>
       <Container>
@@ -101,16 +79,14 @@ const Header = ({ location: { pathname } }) => {
             </IconsItems>
           </IconContainer>
         </CommonItems>
-        {chatHeaders()}
-        {FriendstHeader()}
-        {ShapHeader()}
-        {SettingHeader()}
+        {Headers()}
       </Container>
     </>
   );
 };
 export default withRouter(Header);
 
+const Links = styled(Link)``;
 const Container = styled.div`
   position: absolute;
   width: 100%;
