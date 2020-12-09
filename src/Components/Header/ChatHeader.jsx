@@ -11,23 +11,22 @@ import Music from "../../Screens/images/music.png";
 import Cog from "../../Screens/images/cog.png";
 
 const ChatHeaders = ({ location: { pathname } }) => {
+  const getStyle = (path) => {
+    return {
+      color: pathname === path ? "#191919" : "#B6B6B6",
+    };
+  };
   return (
     <>
       <ChatContainer>
-        <ChatTexts>
-          <ChatLinks
-            to="/chats"
-            style={{ color: pathname === "/chats" ? "black" : "#cccccc" }}
-          >
+        <ChatMenu>
+          <ChatLinks to="/chats" style={getStyle("/chats")}>
             <Header current={pathname === "/chats"} title="채팅" />
           </ChatLinks>
-          <ChatLinks
-            to="/openchats"
-            style={{ color: pathname === "/openchats" ? "black" : "#cccccc" }}
-          >
+          <ChatLinks to="/openchats" style={getStyle("/openchats")}>
             <Header current={pathname === "/openchats"} title="오픈채팅" />
           </ChatLinks>
-        </ChatTexts>
+        </ChatMenu>
 
         <ChatIcons>
           {<img src={Search} width="18px" height="18px" alt="" />}
@@ -57,7 +56,7 @@ const ChatContainer = styled.div`
   margin: 15px 15px;
 `;
 
-const ChatTexts = styled.div`
+const ChatMenu = styled.div`
   display: flex;
 `;
 

@@ -1,127 +1,96 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
-import BaseLabel from "../BaseLabel";
+import { Header } from "../BaseLabel";
 
 import Arrow from "../../Screens/images/arrow.png";
 
+const ShapHeader = ({ location: { pathname } }) => {
+  const getStyle = (path) => {
+    return {
+      color: pathname === path ? "#191919" : "#B6B6B6",
+      borderBottom: pathname === path ? "2px solid #191919" : "transparent",
+      transition: "border-bottom 0.5s ease-in-out",
+    };
+  };
+
+  return (
+    <>
+      <ShapContainer>
+        <ShapMenu>
+          <ShapLinks to="/covid19">
+            <Header
+              title="코로나19"
+              current={pathname === "/covid19"}
+              style={getStyle("/covid19")}
+            />
+          </ShapLinks>
+          <ShapLinks to="/news">
+            <Header
+              title="뉴스"
+              current={pathname === "/news"}
+              style={getStyle("/news")}
+            />
+          </ShapLinks>
+          <ShapLinks to="/kakaotv">
+            <Header
+              title="카카오TV"
+              current={pathname === "/kakaotv"}
+              style={getStyle("/kakaotv")}
+            />
+          </ShapLinks>
+          <ShapLinks to="/fun">
+            <Header
+              title="FUN"
+              current={pathname === "/fun"}
+              style={getStyle("/fun")}
+            />
+          </ShapLinks>
+          <ShapLinks to="/entertain">
+            <Header
+              title="연애"
+              current={pathname === "/entertain"}
+              style={getStyle("/entertain")}
+            />
+          </ShapLinks>
+          <ShapLinks to="/sports">
+            <Header
+              title="스포츠"
+              current={pathname === "/sports"}
+              style={getStyle("/sports")}
+            />
+          </ShapLinks>
+        </ShapMenu>
+        <ShapIcons>
+          <img src={Arrow} width="18px" height="18px" alt="" />
+        </ShapIcons>
+      </ShapContainer>
+    </>
+  );
+};
+export default withRouter(ShapHeader);
 const ShapContainer = styled.div`
-  position: absolute;
-  top: 50px;
-  width: 100%;
-  height: 47px;
+  height: 40px;
   align-items: center;
-  background-color: white;
-`;
-const ShapHeaders = styled.div`
   position: relative;
   top: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
   margin: 15px 15px;
 `;
-const ShapScroll = styled.div`
-  box-sizing: border-box;
-  width: 100%;
-`;
-const ShapTexts = styled.div`
+const ShapMenu = styled.div`
+  display: flex;
   box-sizing: content-box;
-  width: 100%;
-  padding: 0px 10px;
-  overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
   scroll-behavior: smooth;
-`;
-const ShapText = styled.button`
-  margin-right: 14px;
-  font-size: 20px;
-  border: none;
-  padding-bottom: 10px;
-  background-color: inherit;
-  border-bottom: 2px solid
-    ${(props) => (props.current ? "#191919" : "transparent")};
+  scrollbar-color: white;
   cursor: pointer;
-  transition: border-bottom 0.5s ease-in-out;
 `;
 
 const ShapIcons = styled.div`
   display: flex;
   align-items: center;
 `;
-const ShoapItems = styled.div``;
 const ShapLinks = styled(Link)``;
-
-const ShapHeader = ({ location: { pathname } }) => {
-  const getStyle = (path) => {
-    return {
-      color: pathname === path ? "#191919" : "#B6B6B6",
-    };
-  };
-  // const handleClick = (e, path2) => {
-  //   e.target.innerText = [
-  //     pathname === path2 ? "#" + e.target.innerText : e.target.innerText,
-  //   ];
-  // };
-  // const addShap = useRef(null);
-  //useEffect(() => {
-  //   return () => {
-  //     effect
-  //   };
-  // }, [input])
-
-  return (
-    <>
-      <ShapContainer>
-        <ShapHeaders>
-          <ShapTexts>
-            <ShapScroll>
-              <ShapText
-                // ref={addShap}
-                // onClick={handleClick}
-                current={pathname === "/covid19"}
-                style={getStyle("/covid19")}
-              >
-                <ShapLinks to="/covid19">코로나19</ShapLinks>
-              </ShapText>
-              <ShapText
-                current={pathname === "/news"}
-                style={getStyle("/news")}
-              >
-                <ShapLinks to="/news">뉴스</ShapLinks>
-              </ShapText>
-              <ShapText
-                current={pathname === "/kakaotv"}
-                style={getStyle("/kakaotv")}
-              >
-                <ShapLinks to="/kakaotv">카카오TV</ShapLinks>
-              </ShapText>
-              <ShapText current={pathname === "/fun"} style={getStyle("/fun")}>
-                <ShapLinks to="/fun">FUN</ShapLinks>
-              </ShapText>
-              <ShapText
-                current={pathname === "/entertain"}
-                style={getStyle("/entertain")}
-              >
-                <ShapLinks to="/entertain">연애</ShapLinks>
-              </ShapText>
-              <ShapText
-                current={pathname === "/sports"}
-                style={getStyle("/sports")}
-              >
-                <ShapLinks to="/sports">스포츠</ShapLinks>
-              </ShapText>
-            </ShapScroll>
-          </ShapTexts>
-
-          <ShapIcons>
-            <ShoapItems>
-              <img src={Arrow} width="18px" height="18px" alt="" />
-            </ShoapItems>
-          </ShapIcons>
-        </ShapHeaders>
-      </ShapContainer>
-    </>
-  );
-};
-export default withRouter(ShapHeader);
