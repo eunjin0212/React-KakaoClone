@@ -3,7 +3,7 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 
-export const FriendsHeader = ({ title, children }) => {
+const FriendsChatHeader = ({ title, children }) => {
   return (
     <>
       <Title>{title}</Title>
@@ -11,32 +11,15 @@ export const FriendsHeader = ({ title, children }) => {
     </>
   );
 };
-FriendsHeader.propTypes = {
+FriendsChatHeader.propTypes = {
   title: PropTypes.node,
   children: PropTypes.object,
 };
-export const ChatHeader = ({ title, children }) => {
-  return (
-    <>
-      <Btn>{title}</Btn>
-      <div>{children}</div>
-    </>
-  );
-};
-ChatHeader.propTypes = {
-  title: PropTypes.node,
-  children: PropTypes.object,
-};
-
-const Title = styled.div`
-  color: #191919;
-  font-size: 20px;
-`;
 
 const Items = styled.div``;
-const Btn = styled.button`
-  background-color: inherit;
-  border: none;
+const Title = styled.div`
   margin-right: 14px;
   font-size: 20px;
 `;
+
+export default FriendsChatHeader;

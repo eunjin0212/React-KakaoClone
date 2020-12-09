@@ -3,7 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import OpenChats from "../../Screens/Chats/OpenChats";
-import { ChatHeader } from "../BaseLabel";
+import FriendsChatHeader from "../BaseLabel";
 
 import Search from "../../Screens/images/search.png";
 import OpenChat from "../../Screens/images/openChat.png";
@@ -44,27 +44,25 @@ const ChatHeaders = ({ location: { pathname } }) => {
   const getStyle = (path) => {
     return { color: pathname === path ? "#191919" : "#B6B6B6" };
   };
-  const handleClick = (path) => {
-    console.log(path);
-    return { color: pathname === path ? "#191919" : "#B6B6B6" };
-  };
+
   return (
     <>
       <ChatContainer>
         <Menu>
           <ChatTexts>
-            <ChatLinks to="/chats">
-              <ChatHeader
-                current={pathname === "/chats"}
-                title="채팅"
-                onClick={handleClick("/chats")}
-              />
+            <ChatLinks
+              to="/chats"
+              style={{ color: pathname === "/chats" ? "black" : "#cccccc" }}
+            >
+              <FriendsChatHeader current={pathname === "/chats"} title="채팅" />
             </ChatLinks>
-            <ChatLinks to="/openchats">
-              <ChatHeader
+            <ChatLinks
+              to="/openchats"
+              style={{ color: pathname === "/openchats" ? "black" : "#cccccc" }}
+            >
+              <FriendsChatHeader
                 current={pathname === "/openchats"}
                 title="오픈채팅"
-                onClick={handleClick("/openchats")}
               />
             </ChatLinks>
           </ChatTexts>
