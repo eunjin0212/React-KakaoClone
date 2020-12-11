@@ -10,10 +10,12 @@ const ChatsPresenter = ({ title, loading, error }) => {
       ) : (
         <>
           <Container>
-            {Object.values(title.user).map((user) => {
+            {Object.values(title).map((title, i) => {
               return (
                 <>
-                  <div user="김은진" />
+                  <Profile>
+                    <div>{title}</div>
+                  </Profile>
                 </>
               );
             })}
@@ -26,5 +28,14 @@ const ChatsPresenter = ({ title, loading, error }) => {
 
 export default ChatsPresenter;
 const Container = styled.div`
-  font-size: 14px;
+  width: 100%;
+  position: relative;
+  top: 100px;
+  padding: 15px;
+  display: flex;
+`;
+const Profile = styled.div`
+  display: flex;
+  height: 60px;
+  width: 100%;
 `;
