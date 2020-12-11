@@ -2,6 +2,18 @@ import React from "react";
 import styled from "styled-components";
 import kakaoIcon from "../Screens/images/kakaoTalk-icon.png";
 
+const Loading = () => {
+  return (
+    <LoadingContainer>
+      <Background>
+        <Image src={kakaoIcon} />
+      </Background>
+    </LoadingContainer>
+  );
+};
+
+export default Loading;
+
 const LoadingContainer = styled.div`
   background-color: #fbe202;
   width: 100%;
@@ -18,15 +30,3 @@ const Image = styled.img`
   width: 73px;
   height: 73px;
 `;
-
-const Loading = () => {
-  return (
-    <LoadingContainer>
-      <Background>
-        <Image src={kakaoIcon} />
-      </Background>
-    </LoadingContainer>
-  );
-};
-
-export default Loading;

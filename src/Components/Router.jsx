@@ -3,7 +3,7 @@ import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Navgation from "./Navgation";
 import Header from "./Header/Header";
 import Friends from "../Screens/Friends/Friends";
-import Chats from "../Screens/Chats/Chats";
+import Chats from "../Screens/Chats/";
 import Shap from "../Screens/Shap/Shap";
 import Setting from "../Screens/Setting/Setting";
 

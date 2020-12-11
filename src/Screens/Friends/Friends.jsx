@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { User } from "../../Components/BaseLabel";
 
 //images
 import Me from "../images/bori-pro.jpg";
@@ -33,10 +34,9 @@ const FriendsContainer = () => {
       <FriendContainer>
         <Profile>
           <img src={Me} alt="" />
-          <div>
-            <Name>김보리</Name>
-          </div>
+          <User name="김보리" style={{ alignItems: "center" }} />
         </Profile>
+
         <Box>
           {Object.values(title.title).map((title, i) => {
             return (
@@ -86,9 +86,6 @@ const Profile = styled.div`
     border: 1px solid #e7e7e7;
     margin-right: 10px;
   }
-`;
-const Name = styled.span`
-  color: #212121;
 `;
 
 const Box = styled.div`

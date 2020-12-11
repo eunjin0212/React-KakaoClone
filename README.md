@@ -20,6 +20,10 @@
 > - [o] Hooks
 > - [o] Make Loading Screen
 > - [o] Make Navigation
+> - [o] Make Header (재사용 가능한 컴포넌트)
+> - [o] Make ChatScreens (Presenter, Container,index 세 개의 파일로 나눈다)
+>   > - Container : 데이터 처리
+>   > - Presenter : Container의 데이터를 props으로 받아서 보여주는 screen 역할
 
 ### Other
 

@@ -2,11 +2,10 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
-import OpenChats from "../../Screens/Chats/OpenChats";
+// import OpenChats from "../../Screens/Chats/OpenChats";
 import { Header } from "../BaseLabel";
 
 import Search from "../../Screens/images/search.png";
-import OpenChat from "../../Screens/images/openChat.png";
 import Music from "../../Screens/images/music.png";
 import Cog from "../../Screens/images/cog.png";
 
@@ -30,16 +29,16 @@ const ChatHeaders = ({ location: { pathname } }) => {
 
         <ChatIcons>
           {<img src={Search} width="18px" height="18px" alt="" />}
-          {<img src={OpenChat} width="18px" height="18px" alt="" />}
+          {/* {<img src={OpenChat} width="18px" height="18px" alt="" />} */}
           {<img src={Music} width="18px" height="18px" alt="" />}
           {<img src={Cog} width="18px" height="18px" alt="" />}
         </ChatIcons>
       </ChatContainer>
-      <Router>
+      {/* <Router>
         <Switch>
           <Route path="/openchats" exact component={OpenChats} />
         </Switch>
-      </Router>
+      </Router> */}
     </>
   );
 };

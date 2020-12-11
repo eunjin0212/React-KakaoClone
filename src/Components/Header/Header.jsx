@@ -86,7 +86,6 @@ const Header = ({ location: { pathname } }) => {
 };
 export default withRouter(Header);
 
-const Links = styled(Link)``;
 const Container = styled.div`
   position: absolute;
   width: 100%;

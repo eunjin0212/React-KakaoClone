@@ -16,21 +16,17 @@ Header.propTypes = {
   style: PropTypes.object,
 };
 
-export const Chatings = ({ src, name, img, icons, style, children }) => {
+export const User = ({ style, name, children }) => {
   return (
     <>
-      <Name>{name}</Name>
+      <Name style={style}>{name}</Name>
       <Items>{children}</Items>
-      <UIcons src={src} style={style}>
-        {icons}
-      </UIcons>
     </>
   );
 };
-Chatings.propTypes = {
+User.propTypes = {
   name: PropTypes.node,
   children: PropTypes.node,
-  icons: PropTypes.node,
 };
 
 const Items = styled.div``;
@@ -40,9 +36,5 @@ const Title = styled.div`
 `;
 const Name = styled.div`
   height: 100%;
-  font-size: 15px;
   display: flex;
-  margin-right: 5px;
-  align-items: center;
 `;
-const UIcons = styled.div``;
