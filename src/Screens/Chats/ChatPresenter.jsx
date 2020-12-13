@@ -12,6 +12,7 @@ const ChatsPresenter = ({
   time,
   image,
   icons,
+  member,
 }) => {
   return (
     <>
@@ -19,7 +20,7 @@ const ChatsPresenter = ({
         <Loading />
       ) : (
         <>
-          <Container>
+          <ChatContainer>
             <AdContainer>
               <img src={Ad} alt="" />
             </AdContainer>
@@ -31,7 +32,8 @@ const ChatsPresenter = ({
                       <ProfileImg src={image.src[i]} />
                       <div>
                         <MeChatContainer>
-                          <div>{title}</div>
+                          <div style={{ marginRight: "5px" }}>{title}</div>
+                          <span>{member.num[i]}</span>
                           <img src={icons.pin[i]} alt="" />
                           <img src={icons.bell[i]} alt="" />
                         </MeChatContainer>
@@ -43,15 +45,14 @@ const ChatsPresenter = ({
                 </>
               );
             })}
-          </Container>
+          </ChatContainer>
         </>
       )}
     </>
   );
 };
-
 export default ChatsPresenter;
-const Container = styled.div`
+const ChatContainer = styled.div`
   width: 100%;
   position: absolute;
   top: 100px;
@@ -97,9 +98,10 @@ const MeChatContainer = styled.div`
     width: 10px;
     height: 11px;
   }
+  span {
+    color: #9a9a9a;
+  }
 `;
-
-const Icons = styled.img``;
 
 const MeChat = styled.div`
   font-size: 12px;

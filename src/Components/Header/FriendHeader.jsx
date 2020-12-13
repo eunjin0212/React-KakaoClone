@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Header } from "../BaseLabel";
+import { Container } from "../BaseLabel";
 
 import Search from "../../Screens/images/search.png";
 import OpenChat from "../../Screens/images/openChat.png";
@@ -11,14 +11,14 @@ const FriendstHeader = () => {
   return (
     <>
       <FriendContainer>
-        <Header title="친구" style={{ color: "#191919" }}>
+        <Container title="친구" style={{ color: "#191919" }}>
           <Icons>
             {<img src={Search} width="18px" height="18px" alt="" />}
             {<img src={OpenChat} width="18px" height="18px" alt="" />}
             {<img src={Music} width="18px" height="18px" alt="" />}
             {<img src={Cog} width="18px" height="18px" alt="" />}
           </Icons>
-        </Header>
+        </Container>
       </FriendContainer>
     </>
   );

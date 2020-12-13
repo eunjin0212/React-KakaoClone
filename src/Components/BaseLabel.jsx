@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
 
-export const Header = ({ style, title, children }) => {
+export const Container = ({ style, title, children }) => {
   return (
     <>
       <Title style={style}>{title}</Title>
@@ -10,12 +10,11 @@ export const Header = ({ style, title, children }) => {
     </>
   );
 };
-Header.propTypes = {
+Container.propTypes = {
   title: PropTypes.node,
   children: PropTypes.object,
   style: PropTypes.object,
 };
-
 export const User = ({ style, name, children }) => {
   return (
     <>
@@ -28,7 +27,6 @@ User.propTypes = {
   name: PropTypes.node,
   children: PropTypes.node,
 };
-
 const Items = styled.div``;
 const Title = styled.div`
   font-size: 20px;

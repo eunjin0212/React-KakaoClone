@@ -6,7 +6,10 @@ import Pin from "../images/pin.png";
 import User from "../images/profile.png";
 
 const ChatContainer = () => {
-  const [title] = useState({ title: ["MEMO", "김은진", "단톡방"] });
+  const [title] = useState({
+    title: ["MEMO", "김은진", "단톡방"],
+    open: ["단톡방1", "단톡방2"],
+  });
   const [image] = useState({
     src: [Me, User],
   });
@@ -20,13 +23,17 @@ const ChatContainer = () => {
     pin: [Pin, "", Bell],
     bell: [Bell, "", ""],
   });
+  const [member] = useState({
+    num: ["", "", 6],
+  });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const getData = () => {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const getData = (pathname) => {
     try {
       if (!title && !content && !time) {
-        setLoading(true);
+        return setLoading(true);
       }
     } catch (error) {
       setError(error);
@@ -46,6 +53,7 @@ const ChatContainer = () => {
         time={time}
         image={image}
         icons={icons}
+        member={member}
       />
     </>
   );

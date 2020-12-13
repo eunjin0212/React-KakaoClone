@@ -2,9 +2,9 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
-// import OpenChats from "../../Screens/Chats/OpenChats";
-import { Header } from "../BaseLabel";
 
+import { Container } from "../BaseLabel";
+import OpenChat from "../../Screens/images/openChat.png";
 import Search from "../../Screens/images/search.png";
 import Music from "../../Screens/images/music.png";
 import Cog from "../../Screens/images/cog.png";
@@ -20,16 +20,16 @@ const ChatHeaders = ({ location: { pathname } }) => {
       <ChatContainer>
         <ChatMenu>
           <ChatLinks to="/chats" style={getStyle("/chats")}>
-            <Header current={pathname === "/chats"} title="채팅" />
+            <Container current={pathname === "/chats"} title="채팅" />
           </ChatLinks>
           <ChatLinks to="/openchats" style={getStyle("/openchats")}>
-            <Header current={pathname === "/openchats"} title="오픈채팅" />
+            <Container current={pathname === "/openchats"} title="오픈채팅" />
           </ChatLinks>
         </ChatMenu>
 
         <ChatIcons>
           {<img src={Search} width="18px" height="18px" alt="" />}
-          {/* {<img src={OpenChat} width="18px" height="18px" alt="" />} */}
+          {<img src={OpenChat} width="18px" height="18px" alt="" />}
           {<img src={Music} width="18px" height="18px" alt="" />}
           {<img src={Cog} width="18px" height="18px" alt="" />}
         </ChatIcons>

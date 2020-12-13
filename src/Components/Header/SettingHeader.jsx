@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Header } from "../BaseLabel";
+import { Container } from "../BaseLabel";
 
 import Search from "../../Screens/images/search.png";
 import QRcode from "../../Screens/images/qrcode.png";
@@ -11,7 +11,7 @@ const SettingtHeader = () => {
   return (
     <>
       <SettingContainer>
-        <Header title="더보기" style={{ color: "#191919" }} />
+        <Container title="더보기" style={{ color: "#191919" }} />
         <Icons>
           {<img src={Search} width="18px" height="18px" alt="" />}
           {<img src={QRcode} width="18px" height="18px" alt="" />}

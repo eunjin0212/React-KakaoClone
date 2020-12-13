@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
-import { Header } from "../BaseLabel";
+import { Container } from "../BaseLabel";
 
 import Arrow from "../../Screens/images/arrow.png";
 
@@ -19,42 +19,42 @@ const ShapHeader = ({ location: { pathname } }) => {
       <ShapContainer>
         <ShapMenu>
           <ShapLinks to="/covid19">
-            <Header
+            <Container
               title="코로나19"
               current={pathname === "/covid19"}
               style={getStyle("/covid19")}
             />
           </ShapLinks>
-          <ShapLinks to="/news">
-            <Header
+          <ShapLinks to="/shap">
+            <Container
               title="뉴스"
-              current={pathname === "/news"}
-              style={getStyle("/news")}
+              current={pathname === "/shap"}
+              style={getStyle("/shap")}
             />
           </ShapLinks>
           <ShapLinks to="/kakaotv">
-            <Header
+            <Container
               title="카카오TV"
               current={pathname === "/kakaotv"}
               style={getStyle("/kakaotv")}
             />
           </ShapLinks>
           <ShapLinks to="/fun">
-            <Header
+            <Container
               title="FUN"
               current={pathname === "/fun"}
               style={getStyle("/fun")}
             />
           </ShapLinks>
           <ShapLinks to="/entertain">
-            <Header
+            <Container
               title="연애"
               current={pathname === "/entertain"}
               style={getStyle("/entertain")}
             />
           </ShapLinks>
           <ShapLinks to="/sports">
-            <Header
+            <Container
               title="스포츠"
               current={pathname === "/sports"}
               style={getStyle("/sports")}
@@ -77,7 +77,7 @@ const ShapContainer = styled.div`
   left: 0;
   display: flex;
   justify-content: space-between;
-  margin: 15px 15px;
+  margin: 15px 15px 10px 15px;
 `;
 const ShapMenu = styled.div`
   display: flex;
