@@ -41,21 +41,19 @@ const SettingContainer = styled.div`
 const Div = styled.div`
   display: flex;
   width: 100%;
-  padding: 18px 0px;
+  padding: 20px 0px;
   justify-content: space-between;
   font-size: 18px;
-  div {
-    &:not(:nth-child(3, 11, 12)) {
-      border-bottom: 1px solid #f5f5f5;
-    }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #f5f5f5;
   }
   :last-child {
     margin-bottom: 50px;
   }
-  div {
-    &:nth-child(3) {
-      border-bottom: 1px solid #e3e3e3;
-    }
+
+  &:nth-child(8n + 3) {
+    border-bottom: 1px solid #e3e3e3;
   }
 `;
 const Icons = styled.img`
