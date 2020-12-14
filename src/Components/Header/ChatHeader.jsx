@@ -1,9 +1,8 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
-
 import { Container } from "../BaseLabel";
+import Setting from "../../Screens/Setting";
 import OpenChat from "../../Screens/images/openChat.png";
 import Search from "../../Screens/images/search.png";
 import Music from "../../Screens/images/music.png";
@@ -32,15 +31,14 @@ const ChatHeaders = ({ location: { pathname } }) => {
             {<img src={Search} width="18px" height="18px" alt="" />}
             {<img src={OpenChat} width="18px" height="18px" alt="" />}
             {<img src={Music} width="18px" height="18px" alt="" />}
-            {<img src={Cog} width="18px" height="18px" alt="" />}
+            {
+              <Link to="/setting" current={pathname === "/setting"}>
+                <img src={Cog} width="18px" height="18px" alt="" />
+              </Link>
+            }
           </ChatIcons>
         </Div>
       </ChatContainer>
-      {/* <Router>
-        <Switch>
-          <Route path="/openchats" exact component={OpenChats} />
-        </Switch>
-      </Router> */}
     </>
   );
 };

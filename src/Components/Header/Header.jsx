@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { Link, withRouter } from "react-router-dom";
 import ChatHeader from "./ChatHeader";
 import FriendHeader from "./FriendHeader";
 import ShapHeaders from "./ShapHeader";
-import SettingHeaders from "./SettingHeader";
+import MoreHeader from "./MoreHeader";
 
 //Image
 import Signal from "../../Screens/images/signal.png";
@@ -26,7 +25,7 @@ const Header = ({ location: { pathname } }) => {
     );
   };
 
-  const Headers = () => {
+  const Headers = ({ location: { pathname } }) => {
     if (pathname === "/chats" || pathname === "/openchats") {
       return (
         <>
@@ -39,16 +38,15 @@ const Header = ({ location: { pathname } }) => {
           <FriendHeader />
         </>
       );
-    } else if (pathname === "/setting") {
+    } else if (pathname === "/more") {
       return (
         <>
-          <SettingHeaders />
+          <MoreHeader />
         </>
       );
     } else if (
       pathname === "/shap" ||
       pathname === "/covid19" ||
-      pathname === "/news" ||
       pathname === "/kakaotv" ||
       pathname === "/entertain" ||
       pathname === "/fun" ||
@@ -84,7 +82,7 @@ const Header = ({ location: { pathname } }) => {
     </>
   );
 };
-export default withRouter(Header);
+export default Header;
 
 const Container = styled.div`
   position: fixed;

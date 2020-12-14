@@ -42,8 +42,8 @@ const Navigation = ({ location: { pathname } }) => {
               )}
             </NaviLink>
           </Item>
-          <Item aria-current={pathname === "/setting"}>
-            <NaviLink to="/setting">
+          <Item aria-current={pathname === "/more"}>
+            <NaviLink to="/more">
               <img src={Setting} alt="" />
             </NaviLink>
           </Item>

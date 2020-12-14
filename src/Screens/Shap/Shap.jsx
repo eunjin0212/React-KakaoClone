@@ -16,11 +16,11 @@ const News = () => {
   };
   //   const api = axios.create({
   //     baseURL: "https://api.openweathermap.org/data/2.5/",
-  //     params: {
+  //     params:
   //       api_key: "4658b2072b0daa8e1e75d5bbd6358604",
   //       city: "Seoul",
-  //     },
-  //   });
+  //     ,
+  //
 
   return (
     <>

@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import { Container } from "../BaseLabel";
+import { Link, withRouter } from "react-router-dom";
 
 import Search from "../../Screens/images/search.png";
 import QRcode from "../../Screens/images/qrcode.png";
 import Music from "../../Screens/images/music.png";
 import Cog from "../../Screens/images/cog.png";
 
-const SettingtHeader = () => {
+const SettingtHeader = ({ lacation: { pathname } }) => {
   return (
     <>
       <SettingContainer>
@@ -17,14 +18,18 @@ const SettingtHeader = () => {
             {<img src={Search} width="18px" height="18px" alt="" />}
             {<img src={QRcode} width="18px" height="18px" alt="" />}
             {<img src={Music} width="18px" height="18px" alt="" />}
-            {<img src={Cog} width="18px" height="18px" alt="" />}
+            {
+              <Link to="/setting" current={pathname === "/setting"}>
+                <img src={Cog} width="18px" height="18px" alt="" />
+              </Link>
+            }
           </Icons>
         </Div>
       </SettingContainer>
     </>
   );
 };
-export default SettingtHeader;
+export default withRouter(SettingtHeader);
 
 const SettingContainer = styled.div`
   position: fixed;
