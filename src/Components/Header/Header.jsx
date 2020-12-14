@@ -87,7 +87,7 @@ const Header = ({ location: { pathname } }) => {
 export default withRouter(Header);
 
 const Container = styled.div`
-  position: absolute;
+  position: fixed;
   width: 100%;
   display: flex;
   flex-direction: column;

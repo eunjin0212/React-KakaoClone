@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Container } from "../../Components/BaseLabel";
+import axios from "axios";
 
 import Ad from "../images/ad.jpg";
 import News1 from "../images/news1.png";
@@ -13,6 +14,14 @@ const News = () => {
       borderBottom: "1px solid #F7F7F7`",
     };
   };
+  //   const api = axios.create({
+  //     baseURL: "https://api.openweathermap.org/data/2.5/",
+  //     params: {
+  //       api_key: "4658b2072b0daa8e1e75d5bbd6358604",
+  //       city: "Seoul",
+  //     },
+  //   });
+
   return (
     <>
       <NewsContainer>
@@ -113,3 +122,4 @@ const NewsPhoto = styled.div`
   span {
   }
 `;
+const Weather = styled.div``;

@@ -11,28 +11,36 @@ const FriendstHeader = () => {
   return (
     <>
       <FriendContainer>
-        <Container title="친구" style={{ color: "#191919" }}>
-          <Icons>
-            {<img src={Search} width="18px" height="18px" alt="" />}
-            {<img src={OpenChat} width="18px" height="18px" alt="" />}
-            {<img src={Music} width="18px" height="18px" alt="" />}
-            {<img src={Cog} width="18px" height="18px" alt="" />}
-          </Icons>
-        </Container>
+        <Div>
+          <Container title="친구" style={{ color: "#191919" }}>
+            <Icons>
+              {<img src={Search} width="18px" height="18px" alt="" />}
+              {<img src={OpenChat} width="18px" height="18px" alt="" />}
+              {<img src={Music} width="18px" height="18px" alt="" />}
+              {<img src={Cog} width="18px" height="18px" alt="" />}
+            </Icons>
+          </Container>
+        </Div>
       </FriendContainer>
     </>
   );
 };
 export default FriendstHeader;
 const FriendContainer = styled.div`
+  position: fixed;
   height: 40px;
   align-items: center;
-  position: relative;
-  top: 0;
+  background-color: white;
+  top: 50px;
   left: 0;
+  box-sizing: border-box;
+  padding: 15px 15px 10px 15px;
+  width: 100%;
+`;
+const Div = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 15px 15px;
+  width: auto;
 `;
 const Icons = styled.div`
   display: flex;

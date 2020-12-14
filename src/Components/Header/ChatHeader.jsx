@@ -18,21 +18,23 @@ const ChatHeaders = ({ location: { pathname } }) => {
   return (
     <>
       <ChatContainer>
-        <ChatMenu>
-          <ChatLinks to="/chats" style={getStyle("/chats")}>
-            <Container current={pathname === "/chats"} title="채팅" />
-          </ChatLinks>
-          <ChatLinks to="/openchats" style={getStyle("/openchats")}>
-            <Container current={pathname === "/openchats"} title="오픈채팅" />
-          </ChatLinks>
-        </ChatMenu>
+        <Div>
+          <ChatMenu>
+            <ChatLinks to="/chats" style={getStyle("/chats")}>
+              <Container current={pathname === "/chats"} title="채팅" />
+            </ChatLinks>
+            <ChatLinks to="/openchats" style={getStyle("/openchats")}>
+              <Container current={pathname === "/openchats"} title="오픈채팅" />
+            </ChatLinks>
+          </ChatMenu>
 
-        <ChatIcons>
-          {<img src={Search} width="18px" height="18px" alt="" />}
-          {<img src={OpenChat} width="18px" height="18px" alt="" />}
-          {<img src={Music} width="18px" height="18px" alt="" />}
-          {<img src={Cog} width="18px" height="18px" alt="" />}
-        </ChatIcons>
+          <ChatIcons>
+            {<img src={Search} width="18px" height="18px" alt="" />}
+            {<img src={OpenChat} width="18px" height="18px" alt="" />}
+            {<img src={Music} width="18px" height="18px" alt="" />}
+            {<img src={Cog} width="18px" height="18px" alt="" />}
+          </ChatIcons>
+        </Div>
       </ChatContainer>
       {/* <Router>
         <Switch>
@@ -45,16 +47,21 @@ const ChatHeaders = ({ location: { pathname } }) => {
 export default withRouter(ChatHeaders);
 
 const ChatContainer = styled.div`
+  position: fixed;
   height: 40px;
   align-items: center;
-  position: relative;
-  top: 0;
+  background-color: white;
+  top: 50px;
   left: 0;
+  box-sizing: border-box;
+  padding: 15px 15px 10px 15px;
+  width: 100%;
+`;
+const Div = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 15px 15px 10px 15px;
+  width: auto;
 `;
-
 const ChatMenu = styled.div`
   display: flex;
 `;

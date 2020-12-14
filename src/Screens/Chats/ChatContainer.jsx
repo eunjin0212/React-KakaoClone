@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ChatsPresenter from "./ChatPresenter";
+
 import Me from "../images/bori-pro.jpg";
 import Bell from "../images/Bell.png";
 import Pin from "../images/pin.png";
@@ -30,7 +31,7 @@ const ChatContainer = () => {
   const [error, setError] = useState(null);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const getData = (pathname) => {
+  const getData = () => {
     try {
       if (!title && !content && !time) {
         return setLoading(true);
@@ -54,6 +55,8 @@ const ChatContainer = () => {
         image={image}
         icons={icons}
         member={member}
+        error={error}
+        loading={loading}
       />
     </>
   );

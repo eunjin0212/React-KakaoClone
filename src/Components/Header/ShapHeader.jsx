@@ -17,67 +17,75 @@ const ShapHeader = ({ location: { pathname } }) => {
   return (
     <>
       <ShapContainer>
-        <ShapMenu>
-          <ShapLinks to="/covid19">
-            <Container
-              title="코로나19"
-              current={pathname === "/covid19"}
-              style={getStyle("/covid19")}
-            />
-          </ShapLinks>
-          <ShapLinks to="/shap">
-            <Container
-              title="뉴스"
-              current={pathname === "/shap"}
-              style={getStyle("/shap")}
-            />
-          </ShapLinks>
-          <ShapLinks to="/kakaotv">
-            <Container
-              title="카카오TV"
-              current={pathname === "/kakaotv"}
-              style={getStyle("/kakaotv")}
-            />
-          </ShapLinks>
-          <ShapLinks to="/fun">
-            <Container
-              title="FUN"
-              current={pathname === "/fun"}
-              style={getStyle("/fun")}
-            />
-          </ShapLinks>
-          <ShapLinks to="/entertain">
-            <Container
-              title="연애"
-              current={pathname === "/entertain"}
-              style={getStyle("/entertain")}
-            />
-          </ShapLinks>
-          <ShapLinks to="/sports">
-            <Container
-              title="스포츠"
-              current={pathname === "/sports"}
-              style={getStyle("/sports")}
-            />
-          </ShapLinks>
-        </ShapMenu>
-        <ShapIcons>
-          <img src={Arrow} width="18px" height="18px" alt="" />
-        </ShapIcons>
+        <Div>
+          <ShapMenu>
+            <ShapLinks to="/covid19">
+              <Container
+                title="코로나19"
+                current={pathname === "/covid19"}
+                style={getStyle("/covid19")}
+              />
+            </ShapLinks>
+            <ShapLinks to="/shap">
+              <Container
+                title="뉴스"
+                current={pathname === "/shap"}
+                style={getStyle("/shap")}
+              />
+            </ShapLinks>
+            <ShapLinks to="/kakaotv">
+              <Container
+                title="카카오TV"
+                current={pathname === "/kakaotv"}
+                style={getStyle("/kakaotv")}
+              />
+            </ShapLinks>
+            <ShapLinks to="/fun">
+              <Container
+                title="FUN"
+                current={pathname === "/fun"}
+                style={getStyle("/fun")}
+              />
+            </ShapLinks>
+            <ShapLinks to="/entertain">
+              <Container
+                title="연애"
+                current={pathname === "/entertain"}
+                style={getStyle("/entertain")}
+              />
+            </ShapLinks>
+            <ShapLinks to="/sports">
+              <Container
+                title="스포츠"
+                current={pathname === "/sports"}
+                style={getStyle("/sports")}
+              />
+            </ShapLinks>
+          </ShapMenu>
+          <ShapIcons>
+            <img src={Arrow} width="18px" height="18px" alt="" />
+          </ShapIcons>
+        </Div>
       </ShapContainer>
     </>
   );
 };
 export default withRouter(ShapHeader);
 const ShapContainer = styled.div`
+  position: fixed;
   height: 40px;
   align-items: center;
-  position: relative;
-  top: 0;
+  background-color: white;
+  top: 50px;
   left: 0;
+  box-sizing: border-box;
+  padding: 15px 15px 10px 15px;
+  width: 100%;
+`;
+const Div = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 15px 15px 10px 15px;
+  width: auto;
 `;
 const ShapMenu = styled.div`
   display: flex;
@@ -92,5 +100,6 @@ const ShapMenu = styled.div`
 const ShapIcons = styled.div`
   display: flex;
   align-items: center;
+  padding-left: 10px;
 `;
 const ShapLinks = styled(Link)``;
