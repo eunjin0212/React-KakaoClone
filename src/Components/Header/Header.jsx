@@ -6,6 +6,7 @@ import ChatHeader from "./ChatHeader";
 import FriendHeader from "./FriendHeader";
 import ShapHeaders from "./ShapHeader";
 import MoreHeader from "./MoreHeader";
+import SettingHeader from "./SettingHeader";
 
 //Image
 import Signal from "../../Screens/images/signal.png";
@@ -57,6 +58,12 @@ const Header = ({ location: { pathname } }) => {
       return (
         <>
           <ShapHeaders />
+        </>
+      );
+    } else if (pathname === "/setting") {
+      return (
+        <>
+          <SettingHeader />
         </>
       );
     }

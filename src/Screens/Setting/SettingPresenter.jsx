@@ -30,6 +30,7 @@ const SettingPresenter = ({ title, content, icons, loading, error }) => {
   );
 };
 export default SettingPresenter;
+
 const SettingContainer = styled.div`
   width: 100%;
   position: absolute;

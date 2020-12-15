@@ -11,7 +11,7 @@ import Cog from "../../Screens/images/cog.png";
 const MoreHeader = ({ location: { pathname } }) => {
   return (
     <>
-      <SettingContainer>
+      <More>
         <Div>
           <Container title="더보기" style={{ color: "#191919" }} />
           <Icons>
@@ -27,13 +27,13 @@ const MoreHeader = ({ location: { pathname } }) => {
             }
           </Icons>
         </Div>
-      </SettingContainer>
+      </More>
     </>
   );
 };
 export default withRouter(MoreHeader);
 
-const SettingContainer = styled.div`
+const More = styled.div`
   position: fixed;
   height: 40px;
   align-items: center;

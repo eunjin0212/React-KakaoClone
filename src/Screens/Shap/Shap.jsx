@@ -101,14 +101,15 @@ const Covid = styled.div`
   }
 `;
 const NewsBox = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   font-size: 13px;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
+  column-gap: 10px;
 `;
 const NewsPhoto = styled.div`
-  width: 48%;
-
+  width: 100%;
   a {
     display: flex;
     flex-direction: column;

@@ -16,7 +16,7 @@ const ChatHeaders = ({ location: { pathname } }) => {
   };
   return (
     <>
-      <ChatContainer>
+      <Chat>
         <Div>
           <ChatMenu>
             <ChatLinks to="/chats" style={getStyle("/chats")}>
@@ -38,13 +38,13 @@ const ChatHeaders = ({ location: { pathname } }) => {
             }
           </ChatIcons>
         </Div>
-      </ChatContainer>
+      </Chat>
     </>
   );
 };
 export default withRouter(ChatHeaders);
 
-const ChatContainer = styled.div`
+const Chat = styled.div`
   position: fixed;
   height: 40px;
   align-items: center;

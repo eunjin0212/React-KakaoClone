@@ -11,7 +11,7 @@ import Cog from "../../Screens/images/cog.png";
 const FriendstHeader = ({ location: { pathname } }) => {
   return (
     <>
-      <FriendContainer>
+      <Friends>
         <Div>
           <Container title="친구" style={{ color: "#191919" }}>
             <Icons>
@@ -28,12 +28,12 @@ const FriendstHeader = ({ location: { pathname } }) => {
             </Icons>
           </Container>
         </Div>
-      </FriendContainer>
+      </Friends>
     </>
   );
 };
 export default withRouter(FriendstHeader);
-const FriendContainer = styled.div`
+const Friends = styled.div`
   position: fixed;
   height: 40px;
   align-items: center;
