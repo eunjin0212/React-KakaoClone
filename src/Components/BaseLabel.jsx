@@ -33,6 +33,5 @@ const Title = styled.div`
   margin-right: 14px;
 `;
 const Name = styled.div`
-  height: 100%;
   display: flex;
 `;

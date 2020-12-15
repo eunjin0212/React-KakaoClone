@@ -3,13 +3,12 @@ import styled from "styled-components";
 import { Container } from "../BaseLabel";
 import { Link, withRouter } from "react-router-dom";
 
-import Setting from "../../Screens/Setting";
 import Search from "../../Screens/images/search.png";
 import OpenChat from "../../Screens/images/openChat.png";
 import Music from "../../Screens/images/music.png";
 import Cog from "../../Screens/images/cog.png";
 
-const FriendstHeader = ({ loaction: { pathname } }) => {
+const FriendstHeader = ({ location: { pathname } }) => {
   return (
     <>
       <FriendContainer>
@@ -20,9 +19,11 @@ const FriendstHeader = ({ loaction: { pathname } }) => {
               {<img src={OpenChat} width="18px" height="18px" alt="" />}
               {<img src={Music} width="18px" height="18px" alt="" />}
               {
-                <Link to="/setting" current={pathname === "/setting"}>
-                  <img src={Cog} width="18px" height="18px" alt="" />
-                </Link>
+                <Links to="/setting">
+                  <div aria-current={pathname === "/setting"}>
+                    <img src={Cog} width="18px" height="18px" alt="" />
+                  </div>
+                </Links>
               }
             </Icons>
           </Container>
@@ -57,3 +58,4 @@ const Icons = styled.div`
     }
   }
 `;
+const Links = styled(Link)``;

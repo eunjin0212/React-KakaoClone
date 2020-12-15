@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { withRouter } from "react-router";
+
 import ChatHeader from "./ChatHeader";
 import FriendHeader from "./FriendHeader";
 import ShapHeaders from "./ShapHeader";
@@ -25,7 +27,7 @@ const Header = ({ location: { pathname } }) => {
     );
   };
 
-  const Headers = ({ location: { pathname } }) => {
+  const Headers = () => {
     if (pathname === "/chats" || pathname === "/openchats") {
       return (
         <>
@@ -82,7 +84,7 @@ const Header = ({ location: { pathname } }) => {
     </>
   );
 };
-export default Header;
+export default withRouter(Header);
 
 const Container = styled.div`
   position: fixed;

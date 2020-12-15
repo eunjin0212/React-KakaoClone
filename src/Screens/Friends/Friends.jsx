@@ -34,7 +34,10 @@ const FriendsContainer = () => {
       <FriendContainer>
         <Profile>
           <img src={Me} alt="" />
-          <User name="김보리" style={{ alignItems: "center" }} />
+          <User
+            name="김보리"
+            style={{ alignItems: "center", height: "100%" }}
+          />
         </Profile>
 
         <Box>

@@ -8,7 +8,7 @@ import QRcode from "../../Screens/images/qrcode.png";
 import Music from "../../Screens/images/music.png";
 import Cog from "../../Screens/images/cog.png";
 
-const SettingtHeader = ({ lacation: { pathname } }) => {
+const MoreHeader = ({ location: { pathname } }) => {
   return (
     <>
       <SettingContainer>
@@ -19,9 +19,11 @@ const SettingtHeader = ({ lacation: { pathname } }) => {
             {<img src={QRcode} width="18px" height="18px" alt="" />}
             {<img src={Music} width="18px" height="18px" alt="" />}
             {
-              <Link to="/setting" current={pathname === "/setting"}>
-                <img src={Cog} width="18px" height="18px" alt="" />
-              </Link>
+              <Links to="/setting">
+                <div aria-current={pathname === "/setting"}>
+                  <img src={Cog} width="18px" height="18px" alt="" />
+                </div>
+              </Links>
             }
           </Icons>
         </Div>
@@ -29,7 +31,7 @@ const SettingtHeader = ({ lacation: { pathname } }) => {
     </>
   );
 };
-export default withRouter(SettingtHeader);
+export default withRouter(MoreHeader);
 
 const SettingContainer = styled.div`
   position: fixed;
@@ -56,3 +58,4 @@ const Icons = styled.div`
     }
   }
 `;
+const Links = styled(Link)``;

@@ -32,9 +32,9 @@ const ChatHeaders = ({ location: { pathname } }) => {
             {<img src={OpenChat} width="18px" height="18px" alt="" />}
             {<img src={Music} width="18px" height="18px" alt="" />}
             {
-              <Link to="/setting" current={pathname === "/setting"}>
+              <Links to="/setting" current={pathname === "/setting"}>
                 <img src={Cog} width="18px" height="18px" alt="" />
-              </Link>
+              </Links>
             }
           </ChatIcons>
         </Div>
@@ -74,3 +74,4 @@ const ChatIcons = styled.div`
   }
 `;
 const ChatLinks = styled(Link)``;
+const Links = styled(Link)``;
