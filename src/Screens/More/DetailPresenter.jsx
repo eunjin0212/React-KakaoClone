@@ -7,17 +7,17 @@ import Me from "../images/bori-pro.jpg";
 import KakaoCon from "../images/kakaocon.png";
 import PayImg from "../images/clickComment.png";
 import moreAd from "../images/moreAd.jpg";
-import kakaowork from "../images/kakaowork.png";
-import kakao100 from "../images/kakao100.png";
-import mma from "../images/mma.png";
-import kakaostory from "../images/kakaostory.png";
+import img1 from "../images/kakaowork.png";
+import img2 from "../images/kakao100.png";
+import img3 from "../images/mma.png";
+import img4 from "../images/kakaostory.png";
 
 const DetailPresenter = ({ title, icons, loading, error }) => {
-  const SlideImg = () => {
+  const SlideImg = ({ img }) => {
     return (
       <>
         <Slide>
-          <img src={kakao100} alt="" />
+          <img src={img} alt="" />
         </Slide>
       </>
     );
