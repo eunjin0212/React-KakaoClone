@@ -8,7 +8,7 @@ import {
 
 import Navgation from "./Navgation";
 import Header from "./Header/Header";
-import Friends from "../Screens/Friends/Friends";
+import Friends from "../Screens/Friends";
 import Chats from "../Screens/Chats/";
 import Shap from "../Screens/Shap/Shap";
 import More from "../Screens/More";
