@@ -25,6 +25,7 @@
 >   > - Container : 데이터 처리
 >   > - Presenter : Container의 데이터를 props으로 받아서 보여주는 screen 역할
 > - [ ] Shap Screen 날씨 API받기
+> - [ ] More Screen Carousel 구현(슬라이더)
 
 ### Other
 

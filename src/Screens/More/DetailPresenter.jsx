@@ -6,8 +6,22 @@ import { User } from "../../Components/BaseLabel";
 import Me from "../images/bori-pro.jpg";
 import KakaoCon from "../images/kakaocon.png";
 import PayImg from "../images/clickComment.png";
+import moreAd from "../images/moreAd.jpg";
+import kakaowork from "../images/kakaowork.png";
+import kakao100 from "../images/kakao100.png";
+import mma from "../images/mma.png";
+import kakaostory from "../images/kakaostory.png";
 
 const DetailPresenter = ({ title, icons, loading, error }) => {
+  const SlideImg = () => {
+    return (
+      <>
+        <Slide>
+          <img src={kakao100} alt="" />
+        </Slide>
+      </>
+    );
+  };
   return (
     <>
       {loading ? (
@@ -52,6 +66,13 @@ const DetailPresenter = ({ title, icons, loading, error }) => {
                 );
               })}
             </Grid>
+            <MoreAd href="https://diorparfums.diorbeautyevent.co.kr/?utm_source=kakao&utm_content=display_missdior_sampling&utm_medium=display&utm_campaign=missdiorsampling_kr_dec20&dclid=CIe1mZDxz-0CFRdzYAodZ5ULSA">
+              <img src={moreAd} alt="" />
+            </MoreAd>
+            <KakaoNow>
+              카카오 나우
+              <Slide></Slide>
+            </KakaoNow>
           </DetailContainer>
         </>
       )}
@@ -170,3 +191,13 @@ const Property = styled.div`
     color: #dfdfdf;
   }
 `;
+const MoreAd = styled.a`
+  padding-bottom: 50px;
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+`;
+const KakaoNow = styled.div``;
+const Slide = styled.div``;
