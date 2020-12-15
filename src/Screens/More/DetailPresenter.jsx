@@ -7,7 +7,7 @@ import Me from "../images/bori-pro.jpg";
 import KakaoCon from "../images/kakaocon.png";
 import PayImg from "../images/clickComment.png";
 
-const DetailPresenter = ({ title, content, icons, loading, error }) => {
+const DetailPresenter = ({ title, icons, loading, error }) => {
   return (
     <>
       {loading ? (
@@ -40,19 +40,18 @@ const DetailPresenter = ({ title, content, icons, loading, error }) => {
                 송금 <div>|</div> 결제 <div>|</div> 자산
               </Property>
             </KakaoPay>
-            {Object.values(title.title).map((title, i) => {
-              return (
-                <>
-                  <Div>
-                    <div style={{ display: "flex" }}>
-                      <Icons />
+            <Grid>
+              {Object.values(title.title).map((title, i) => {
+                return (
+                  <>
+                    <Div>
+                      <Icons src={icons.src[i]} />
                       <Title>{title}</Title>
-                    </div>
-                    <Content>{}</Content>
-                  </Div>
-                </>
-              );
-            })}
+                    </Div>
+                  </>
+                );
+              })}
+            </Grid>
           </DetailContainer>
         </>
       )}
@@ -69,34 +68,26 @@ const DetailContainer = styled.div`
   flex-direction: column;
 `;
 const Div = styled.div`
-  display: flex;
   width: 100%;
   padding: 20px 0px;
-  justify-content: space-between;
+  justify-content: center;
   font-size: 15px;
-
-  &:not(:last-child) {
-    border-bottom: 1px solid #f5f5f5;
-  }
-  :last-child {
-    margin-bottom: 50px;
-  }
-
-  &:nth-child(8n + 3) {
-    border-bottom: 1px solid #e3e3e3;
-  }
+  text-align: center;
+`;
+const Grid = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  box-sizing: border-box;
 `;
 const Icons = styled.img`
-  width: 16px;
-  height: 16px;
-  margin-right: 20px;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 5px;
 `;
 const Title = styled.div`
   display: flex;
   flex-direction: column;
-`;
-const Content = styled.div`
-  color: #848484;
 `;
 const Profile = styled.div`
   display: flex;
