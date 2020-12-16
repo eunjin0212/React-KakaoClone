@@ -25,7 +25,15 @@
 >   > - Container : 데이터 처리
 >   > - Presenter : Container의 데이터를 props으로 받아서 보여주는 screen 역할
 > - [ ] Shap Screen 날씨 API받기
-> - [ ] More Screen Carousel 구현(슬라이더)
+> - [△] More Screen Carousel 구현(슬라이더)
+> - [ ] Carousel 이미지에 링크 걸기
+
+```
+<a href="http://pf.kakao.com/_ZRQBh/60888445">{img1}</a>
+<a herf="http://pf.kakao.com/_ZRQBh/61257645">{img2}</a>
+<a herf="https://brunch.co.kr/@andkakao/204">{img3}</a>
+<a herf="https://brunch.co.kr/@andkakao/202">{img4}</a>
+```
 
 ### Other
 

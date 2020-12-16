@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import Loading from "../Loading";
 import { User } from "../../Components/BaseLabel";
+import ReactHooksCarousel from "react-hooks-carousel";
+import Weather from "../../Components/Weather";
 
 import Me from "../images/bori-pro.jpg";
 import KakaoCon from "../images/kakaocon.png";
@@ -13,13 +15,14 @@ import img3 from "../images/mma.png";
 import img4 from "../images/kakaostory.png";
 
 const DetailPresenter = ({ title, icons, loading, error }) => {
-  const SlideImg = ({ img }) => {
+  const carousel = () => {
     return (
-      <>
-        <Slide>
-          <img src={img} alt="" />
-        </Slide>
-      </>
+      <ReactHooksCarousel
+        height="auto"
+        width="100%"
+        pictures={[img1, img2, img3, img4]}
+        styleProp={{ borderRadius: "10px" }}
+      />
     );
   };
   return (
@@ -70,9 +73,11 @@ const DetailPresenter = ({ title, icons, loading, error }) => {
               <img src={moreAd} alt="" />
             </MoreAd>
             <KakaoNow>
-              카카오 나우
-              <Slide></Slide>
+              <div>카카오 나우</div>
+              {carousel()}
             </KakaoNow>
+            <Weather />
+            {console.log(Weather)}
           </DetailContainer>
         </>
       )}
@@ -192,12 +197,19 @@ const Property = styled.div`
   }
 `;
 const MoreAd = styled.a`
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   img {
     width: 100%;
     height: auto;
     border-radius: 10px;
   }
 `;
-const KakaoNow = styled.div``;
-const Slide = styled.div``;
+const KakaoNow = styled.div`
+  width: 100%;
+  padding-bottom: 50px;
+  div {
+    font-weight: 700;
+    font-size: 15px;
+    padding-bottom: 10px;
+  }
+`;
