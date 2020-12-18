@@ -1,67 +1,64 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+import useGeolocation from "react-hook-geolocation";
+import ReactAnimatedWeather from "react-animated-weather";
 
-const Weather = () => {
-  const [weather, setWeather] = useState("");
-  const [error, setError] = useState(null);
-  const API_KEY = "4658b2072b0daa8e1e75d5bbd6358604"; //내 위치
-  const COORDS = "coords";
-  const baseUrl = "https://api.openweathermap.org/data/2.5/";
-
-  const getWeather = (lat, lon) => {
-    fetch(
-      `${baseUrl}weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang={kr}`
-    )
-      .then(function (response) {
-        console.log(response.json);
-        return response.json();
+const Weather = (props) => {
+  const geolocation = useGeolocation();
+  const api = {
+    key: "4658b2072b0daa8e1e75d5bbd6358604",
+    baseUrl: "http://api.openweathermap.org/data/2.5/",
+  };
+  const [error, setError] = useState("");
+  const [weather, setWeather] = useState({});
+  const defaults = {
+    color: "black",
+    size: 192,
+    animate: true,
+  };
+  const getWeather = () => {
+    axios
+      .get(
+        `${api.baseUrl}weather?lat=${geolocation.latitude}&lon=${geolocation.longitude}&appid=${api.key}&units=metric
+    `
+      )
+      .then((response) => {
+        setWeather(response.data);
       })
-      .then(function (json) {
-        const temperature = json.main.temp;
-        const place = json.name;
-        setWeather(`${temperature} \n ${place}`);
+      .catch(function (error) {
+        console.log(error);
+        setWeather("");
+        setError({ message: "Error!!!" });
       });
   };
   useEffect(() => {
     getWeather();
   }, []);
-  const saveCoords = (coordsObj) => {
-    localStorage.setItem(COORDS, JSON.stringify(coordsObj));
-  };
-
-  const weatherSuccess = (position) => {
-    const latitude = position.coords.latitude;
-    const longitude = position.coords.longitude;
-    const coordsObj = {
-      latitude: latitude,
-      longitude: longitude,
-    };
-    saveCoords(coordsObj);
-    getWeather(latitude, longitude);
-  };
-  const weatherError = () => {
-    setError("위치 정보를 얻을 수 없습니다.");
-  };
-
-  const askForCoords = () => {
-    navigator.geolocation.getCurrentPosition(weatherSuccess, weatherError);
-  };
-
-  const loadCoords = () => {
-    const loadedCoords = localStorage.getItem(COORDS);
-    if (loadedCoords === null) {
-      askForCoords();
-    } else {
-      const parsedCoords = JSON.parse(loadedCoords);
-      getWeather(parsedCoords.latitude, parsedCoords.longitude);
-    }
-  };
-  const init = () => {
-    loadCoords();
-  };
-  init();
   return (
     <>
-      <div>{weather}</div>
+      <ReactAnimatedWeather
+        icons={props.icon}
+        color={defaults.color}
+        size={defaults.size}
+        animate={defaults.animate}
+      />
+      <div>
+        {typeof weather.main != "undefined" ? (
+          <>
+            <div>
+              {Math.round(weather.main.temp)}°c ({weather.weather[0].main})
+            </div>
+            <img
+              src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
+              alt=""
+              width="150px"
+              height="150px"
+            />
+          </>
+        ) : (
+          <div>{error.message}</div>
+        )}
+      </div>
     </>
   );
 };

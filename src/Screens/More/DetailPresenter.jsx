@@ -77,7 +77,6 @@ const DetailPresenter = ({ title, icons, loading, error }) => {
               {carousel()}
             </KakaoNow>
             <Weather />
-            {console.log(Weather)}
           </DetailContainer>
         </>
       )}
@@ -206,7 +205,6 @@ const MoreAd = styled.a`
 `;
 const KakaoNow = styled.div`
   width: 100%;
-  padding-bottom: 50px;
   div {
     font-weight: 700;
     font-size: 15px;

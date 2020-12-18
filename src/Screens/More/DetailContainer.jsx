@@ -78,7 +78,7 @@ const DetailContainer = () => {
   };
   useEffect(() => {
     getData();
-  }, [getData]);
+  });
 
   return (
     <>
