@@ -24,7 +24,7 @@
 > - [o] Make ChatScreens (Presenter, Container,index 세 개의 파일로 나눈다)
 >   > - Container : 데이터 처리
 >   > - Presenter : Container의 데이터를 props으로 받아서 보여주는 screen 역할
-> - [ ] Shap Screen 날씨 API받기
+> - [o] Shap Screen, More Screen 날씨 API받기
 > - [△] More Screen Carousel 구현(슬라이더)
 > - [ ] Carousel 이미지에 링크 걸기
 
