@@ -1,65 +1,77 @@
 import React, { useState, useEffect } from "react";
+import { Api401, Api404, Api429 } from "./ErrorMsg";
 import axios from "axios";
 import useGeolocation from "react-hook-geolocation";
-import ReactAnimatedWeather from "react-animated-weather";
+import styled from "styled-components";
 
 const Weather = (props) => {
   const geolocation = useGeolocation();
   const api = {
     key: "4658b2072b0daa8e1e75d5bbd6358604",
-    baseUrl: "http://api.openweathermap.org/data/2.5/",
+    baseUrl: "https://api.openweathermap.org/data/2.5/",
   };
-  const [error, setError] = useState("");
   const [weather, setWeather] = useState({});
-  const defaults = {
-    color: "black",
-    size: 192,
-    animate: true,
-  };
-  const getWeather = () => {
+  const [error, setError] = useState("");
+
+  let lat = geolocation.latitude;
+  let lon = geolocation.longitude;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const getWeather = (latitude, longitude) => {
     axios
       .get(
-        `${api.baseUrl}weather?lat=${geolocation.latitude}&lon=${geolocation.longitude}&appid=${api.key}&units=metric
+        `${api.baseUrl}weather?lat=${latitude}&lon=${longitude}&appid=${api.key}&units=metriclang=ko
     `
       )
       .then((response) => {
         setWeather(response.data);
       })
       .catch(function (error) {
-        console.log(error);
+        let errorMsg = console.log(error);
         setWeather("");
-        setError({ message: "Error!!!" });
+        setError({ message: `Error : ${errorMsg}` });
       });
   };
   useEffect(() => {
-    getWeather();
+    getWeather(lat, lon);
   }, []);
   return (
     <>
-      <ReactAnimatedWeather
-        icons={props.icon}
-        color={defaults.color}
-        size={defaults.size}
-        animate={defaults.animate}
-      />
-      <div>
-        {typeof weather.main != "undefined" ? (
-          <>
-            <div>
-              {Math.round(weather.main.temp)}°c ({weather.weather[0].main})
-            </div>
-            <img
-              src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
-              alt=""
-              width="150px"
-              height="150px"
-            />
-          </>
-        ) : (
-          <div>{error.message}</div>
-        )}
+      <div style={{ fonSize: "14px", marginBottom: "10px", fontWeight: 700 }}>
+        날씨
       </div>
+      {typeof weather.main != "undefined" ? (
+        <>
+          <WeatherContainer>
+            <WeatherIcon>
+              <img
+                src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
+                alt=""
+              />
+            </WeatherIcon>
+            <Temperature>
+              {Math.round(weather.main.temp)}°c ({weather.weather[0].main})
+            </Temperature>
+          </WeatherContainer>
+        </>
+      ) : (
+        <ErrorMsg>
+          {error.message}
+          {((<Api401 />), (<Api404 />), (<Api429 />))}
+        </ErrorMsg>
+      )}
     </>
   );
 };
 export default Weather;
+const WeatherContainer = styled.div`
+  padding-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-top: 1px solid gray;
+`;
+const WeatherIcon = styled.div``;
+const Temperature = styled.div``;
+const ErrorMsg = styled.div`
+  padding-bottom: 50px;
+`;

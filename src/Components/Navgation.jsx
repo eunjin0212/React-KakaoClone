@@ -56,7 +56,7 @@ const Navigation = ({ location: { pathname } }) => {
 export default withRouter(Navigation);
 const NaviContainer = styled.div`
   position: fixed;
-  bottom: -1px;
+  bottom: -2px;
   width: 100%;
   height: 50px;
   box-shadow: 0 -5px 10px -5px #e0e0e0;
