@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import Search from "../../Screens/images/search.png";
-import Left from "../../Screens/images/left.png";
+import Search from "../../Assets/images/search.png";
+import Left from "../../Assets/images/left.png";
 
 const SettingHeaders = () => {
   return (

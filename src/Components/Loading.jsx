@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import kakaoIcon from "../Screens/images/kakaoTalk-icon.png";
+import kakaoIcon from "../Assets/images/kakaoTalk-icon.png";
 
 const Loading = () => {
   return (

@@ -1,32 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-import Loading from "../Loading";
+import SettingHeader from "../../Components/SettingHeader";
 
 const SettingPresenter = ({ title, content, icons, loading, error }) => {
   return (
-    <>
-      {loading ? (
-        <Loading />
-      ) : (
-        <>
-          <SettingContainer>
-            {Object.values(title.title).map((title, i) => {
-              return (
-                <>
-                  <Div>
-                    <div style={{ display: "flex" }}>
-                      <Icons src={icons.src[i]} />
-                      <Title>{title}</Title>
-                    </div>
-                    <Content>{content.message[i]}</Content>
-                  </Div>
-                </>
-              );
-            })}
-          </SettingContainer>
-        </>
-      )}
-    </>
+    <SettingContainer>
+      <SettingHeader />
+      {Object.values(title.title).map((title, i) => (
+        <Wrapper>
+          <Div>
+            <div style={{ display: "flex" }}>
+              <Icons src={icons.src[i]} />
+              <Title>{title}</Title>
+            </div>
+            <Content>{content.message[i]}</Content>
+          </Div>
+        </Wrapper>
+      ))}
+    </SettingContainer>
   );
 };
 export default SettingPresenter;
@@ -39,6 +30,11 @@ const SettingContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
+const Wrapper = styled.div`
+  &:last-child {
+    padding-bottom: 50px;
+  }
+`;
 const Div = styled.div`
   display: flex;
   width: 100%;
@@ -48,9 +44,6 @@ const Div = styled.div`
 
   &:not(:last-child) {
     border-bottom: 1px solid #f5f5f5;
-  }
-  :last-child {
-    margin-bottom: 50px;
   }
 
   &:nth-child(8n + 3) {

@@ -1,13 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import Loading from "../Loading";
-
-import Ad from "../images/ad.jpg";
+import ChatHeader from "../../Components/ChatHeader";
+import Ad from "../../Assets/images/ad.jpg";
 
 const ChatsPresenter = ({
   title,
   content,
-  loading,
   error,
   time,
   image,
@@ -15,44 +13,36 @@ const ChatsPresenter = ({
   member,
 }) => {
   return (
-    <>
-      {loading ? (
-        <Loading />
-      ) : (
-        <>
-          <ChatContainer>
-            <AdContainer>
-              <img src={Ad} alt="" />
-            </AdContainer>
-            {Object.values(title.title).map((title, i) => {
-              return (
-                <>
-                  <Profile>
-                    <div style={{ display: "flex" }}>
-                      <ProfileImg src={image.src[i]} />
-                      <div>
-                        <MeChatContainer>
-                          <div style={{ marginRight: "5px" }}>{title}</div>
-                          <span>{member.num[i]}</span>
-                          <img src={icons.pin[i]} alt="" />
-                          <img src={icons.bell[i]} alt="" />
-                        </MeChatContainer>
-                        <MeChat>{content.message[i]}</MeChat>
-                      </div>
-                    </div>
-                    <ChatTime>{time.time[i]}</ChatTime>
-                  </Profile>
-                </>
-              );
-            })}
-          </ChatContainer>
-        </>
-      )}
-    </>
+    <Wrapper>
+      <ChatHeader />
+      <AdContainer>
+        <img src={Ad} alt="" />
+      </AdContainer>
+      {Object.values(title.title).map((title, i) => {
+        return (
+          <Profile>
+            <div style={{ display: "flex" }}>
+              <ProfileImg src={image.src[i]} />
+              <div>
+                <MeChatContainer>
+                  <div style={{ marginRight: "5px" }}>{title}</div>
+                  <span>{member.num[i]}</span>
+                  <img src={icons.pin[i]} alt="" />
+                  <img src={icons.bell[i]} alt="" />
+                </MeChatContainer>
+                <MeChat>{content.message[i]}</MeChat>
+              </div>
+            </div>
+            <ChatTime>{time.time[i]}</ChatTime>
+          </Profile>
+        );
+      })}
+    </Wrapper>
   );
 };
 export default ChatsPresenter;
-const ChatContainer = styled.div`
+
+const Wrapper = styled.div`
   width: 100%;
   position: absolute;
   top: 100px;

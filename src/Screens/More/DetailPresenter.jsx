@@ -1,18 +1,18 @@
 import React from "react";
 import styled from "styled-components";
-import Loading from "../Loading";
-import { User } from "../../Components/BaseLabel";
+import { User } from "../../Components/BaseComponent";
 import ReactHooksCarousel from "react-hooks-carousel";
 import Weather from "../../Components/Weather";
+import MoreHeader from "../../Components/MoreHeader";
 
-import Me from "../images/bori-pro.jpg";
-import KakaoCon from "../images/kakaocon.png";
-import PayImg from "../images/clickComment.png";
-import moreAd from "../images/moreAd.jpg";
-import img1 from "../images/kakaowork.png";
-import img2 from "../images/kakao100.png";
-import img3 from "../images/mma.png";
-import img4 from "../images/kakaostory.png";
+import Me from "../../Assets/images/bori-pro.jpg";
+import KakaoCon from "../../Assets/images/kakaocon.png";
+import PayImg from "../../Assets/images/clickComment.png";
+import moreAd from "../../Assets/images/moreAd.jpg";
+import img1 from "../../Assets/images/kakaowork.png";
+import img2 from "../../Assets/images/kakao100.png";
+import img3 from "../../Assets/images/mma.png";
+import img4 from "../../Assets/images/kakaostory.png";
 
 const DetailPresenter = ({ title, icons, loading, error }) => {
   const carousel = () => {
@@ -26,61 +26,54 @@ const DetailPresenter = ({ title, icons, loading, error }) => {
     );
   };
   return (
-    <>
-      {loading ? (
-        <Loading />
-      ) : (
-        <>
-          <DetailContainer>
-            <Profile>
-              <Box>
-                <img src={Me} alt="" />
-                <Info>
-                  <User name="김보리" style={{ fontSize: "18px" }} />
-                  <Items children="eunjin0212@naver.com" />
-                </Info>
-              </Box>
-              <div style={{ display: "flex" }}>
-                <Acount>My</Acount>
-                <Acount>
-                  <img src={KakaoCon} alt="" />
-                  20
-                </Acount>
-              </div>
-            </Profile>
-            <KakaoPay>
-              <Pay>
-                <img src={PayImg} alt="" />
-                <div>pay</div> 0원
-              </Pay>
-              <Property>
-                송금 <div>|</div> 결제 <div>|</div> 자산
-              </Property>
-            </KakaoPay>
-            <Grid>
-              {Object.values(title.title).map((title, i) => {
-                return (
-                  <>
-                    <Div>
-                      <Icons src={icons.src[i]} />
-                      <Title>{title}</Title>
-                    </Div>
-                  </>
-                );
-              })}
-            </Grid>
-            <MoreAd href="https://diorparfums.diorbeautyevent.co.kr/?utm_source=kakao&utm_content=display_missdior_sampling&utm_medium=display&utm_campaign=missdiorsampling_kr_dec20&dclid=CIe1mZDxz-0CFRdzYAodZ5ULSA">
-              <img src={moreAd} alt="" />
-            </MoreAd>
-            <KakaoNow>
-              <div>카카오 나우</div>
-              {carousel()}
-            </KakaoNow>
-            <Weather />
-          </DetailContainer>
-        </>
-      )}
-    </>
+    <DetailContainer>
+      <MoreHeader />
+      <Profile>
+        <Box>
+          <img src={Me} alt="" />
+          <Info>
+            <User name="김보리" style={{ fontSize: "18px" }} />
+            <Items children="eunjin0212@naver.com" />
+          </Info>
+        </Box>
+        <div style={{ display: "flex" }}>
+          <Acount>My</Acount>
+          <Acount>
+            <img src={KakaoCon} alt="" />
+            20
+          </Acount>
+        </div>
+      </Profile>
+      <KakaoPay>
+        <Pay>
+          <img src={PayImg} alt="" />
+          <div>pay</div> 0원
+        </Pay>
+        <Property>
+          송금 <div>|</div> 결제 <div>|</div> 자산
+        </Property>
+      </KakaoPay>
+      <Grid>
+        {Object.values(title.title).map((title, i) => {
+          return (
+            <>
+              <Div>
+                <Icons src={icons.src[i]} />
+                <Title>{title}</Title>
+              </Div>
+            </>
+          );
+        })}
+      </Grid>
+      <MoreAd href="https://diorparfums.diorbeautyevent.co.kr/?utm_source=kakao&utm_content=display_missdior_sampling&utm_medium=display&utm_campaign=missdiorsampling_kr_dec20&dclid=CIe1mZDxz-0CFRdzYAodZ5ULSA">
+        <img src={moreAd} alt="" />
+      </MoreAd>
+      <KakaoNow>
+        <div>카카오 나우</div>
+        {carousel()}
+      </KakaoNow>
+      <Weather />
+    </DetailContainer>
   );
 };
 export default DetailPresenter;
@@ -91,6 +84,7 @@ const DetailContainer = styled.div`
   padding: 15px;
   display: flex;
   flex-direction: column;
+  box-sizing: content-box;
 `;
 const Div = styled.div`
   width: 100%;

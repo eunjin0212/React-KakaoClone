@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { Container } from "../BaseLabel";
+import { Container } from "../BaseComponent";
 import { Link, withRouter } from "react-router-dom";
 
-import Search from "../../Screens/images/search.png";
-import QRcode from "../../Screens/images/qrcode.png";
-import Music from "../../Screens/images/music.png";
-import Cog from "../../Screens/images/cog.png";
+import Search from "../../Assets/images/search.png";
+import QRcode from "../../Assets/images/qrcode.png";
+import Music from "../../Assets/images/music.png";
+import Cog from "../../Assets/images/cog.png";
 
 const MoreHeader = ({ location: { pathname } }) => {
   return (

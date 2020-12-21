@@ -3,11 +3,11 @@ import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 
 //Image
-import clickUser from "../Screens/images/clickUser.png";
-import Comment from "../Screens/images/comment.png";
-import Setting from "../Screens/images/setting.png";
-import ClickComment from "../Screens/images/clickComment.png";
-import User from "../Screens/images/user.png";
+import clickUser from "../Assets/images/clickUser.png";
+import Comment from "../Assets/images/comment.png";
+import Setting from "../Assets/images/setting.png";
+import ClickComment from "../Assets/images/clickComment.png";
+import User from "../Assets/images/user.png";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 const Navigation = ({ location: { pathname } }) => {

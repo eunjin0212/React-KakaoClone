@@ -1,4 +1,4 @@
-import Routers from "./Components/Router";
+import Routers from "./Routers";
 import GlobalStyles from "./Components/GlobalStyles";
 import NoMobile from "./Components/NoMobile";
 

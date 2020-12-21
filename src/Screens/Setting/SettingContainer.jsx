@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react";
 import SettingPresenter from "./SettingPresenter";
 
-import Bullhorn from "../images/bullhorn.png";
-import Flask from "../images/flask.png";
-import Version from "../images/version.png";
-import Lock from "../images/lock.png";
-import Notice from "../images/bell-setting.png";
-import Friends from "../images/user.png";
-import Chatting from "../images/comment.png";
-import Sun from "../images/sun.png";
-import Theme from "../images/brush.png";
-import Call from "../images/phone.png";
-import Setting from "../images/setting.png";
-import Question from "../images/question.png";
+import Bullhorn from "../../Assets/images/bullhorn.png";
+import Flask from "../../Assets/images/flask.png";
+import Version from "../../Assets/images/version.png";
+import Lock from "../../Assets/images/lock.png";
+import Notice from "../../Assets/images/bell-setting.png";
+import Friends from "../../Assets/images/user.png";
+import Chatting from "../../Assets/images/comment.png";
+import Sun from "../../Assets/images/sun.png";
+import Theme from "../../Assets/images/brush.png";
+import Call from "../../Assets/images/phone.png";
+import Setting from "../../Assets/images/setting.png";
+import Question from "../../Assets/images/question.png";
 
 const SettingContainer = () => {
-  const [title] = useState({
+  const title = {
     title: [
       "공지사항",
       "실험실",
@@ -30,8 +30,8 @@ const SettingContainer = () => {
       "기타",
       "고객센터/도움말",
     ],
-  });
-  const [icons] = useState({
+  };
+  const icons = {
     src: [
       Bullhorn,
       Flask,
@@ -46,11 +46,10 @@ const SettingContainer = () => {
       Setting,
       Question,
     ],
-  });
-  console.log(icons.src[0]);
-  const [content] = useState({
+  };
+  const content = {
     message: ["", "", "최신버전", "", "", "", "", "라이트모드", "", "", ""],
-  });
+  };
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -62,7 +61,7 @@ const SettingContainer = () => {
         return setLoading(true);
       }
     } catch (error) {
-      setError(error);
+      setError({ error: "Error!!" });
     } finally {
       setLoading(false);
     }

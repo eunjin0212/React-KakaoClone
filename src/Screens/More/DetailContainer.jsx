@@ -1,25 +1,25 @@
 import React, { useState, useEffect } from "react";
 import DetailPresenter from "./DetailPresenter";
 
-import mail from "../images/mail.png";
-import calendar from "../images/calendar.png";
-import drawer from "../images/drawer.png";
-import maker from "../images/maker.png";
-import gift from "../images/gift.png";
-import emoticon from "../images/emoticon.png";
-import rion from "../images/rion.png";
-import shopping from "../images/shopping.png";
-import styles from "../images/style.png";
-import order from "../images/order.png";
-import ticket from "../images/ticket.png";
-import game from "../images/game.png";
-import page from "../images/page.png";
-import music from "../images/music.png";
-import hair from "../images/hair.png";
-import service from "../images/service.png";
+import mail from "../../Assets/images/mail.png";
+import calendar from "../../Assets/images/calendar.png";
+import drawer from "../../Assets/images/drawer.png";
+import maker from "../../Assets/images/maker.png";
+import gift from "../../Assets/images/gift.png";
+import emoticon from "../../Assets/images/emoticon.png";
+import rion from "../../Assets/images/rion.png";
+import shopping from "../../Assets/images/shopping.png";
+import styles from "../../Assets/images/style.png";
+import order from "../../Assets/images/order.png";
+import ticket from "../../Assets/images/ticket.png";
+import game from "../../Assets/images/game.png";
+import page from "../../Assets/images/page.png";
+import music from "../../Assets/images/music.png";
+import hair from "../../Assets/images/hair.png";
+import service from "../../Assets/images/service.png";
 
 const DetailContainer = () => {
-  const [title] = useState({
+  const title = {
     title: [
       "메일",
       "캘린더",
@@ -38,9 +38,9 @@ const DetailContainer = () => {
       "헤어샵",
       "전체서비스",
     ],
-  });
+  };
 
-  const [icons] = useState({
+  const icons = {
     src: [
       mail,
       calendar,
@@ -59,7 +59,7 @@ const DetailContainer = () => {
       hair,
       service,
     ],
-  });
+  };
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);

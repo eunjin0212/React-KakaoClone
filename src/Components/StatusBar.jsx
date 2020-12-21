@@ -1,17 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { withRouter } from "react-router";
-
-import ChatHeader from "./ChatHeader";
-import FriendHeader from "./FriendHeader";
-import ShapHeaders from "./ShapHeader";
-import MoreHeader from "./MoreHeader";
-import SettingHeader from "./SettingHeader";
-
 //Image
-import Signal from "../../Screens/images/signal.png";
-import Wifi from "../../Screens/images/wifi.png";
-import Battery from "../../Screens/images/battery.png";
+import Signal from "../Assets/images/signal.png";
+import Wifi from "../Assets/images/wifi.png";
+import Battery from "../Assets/images/battery.png";
 
 const Header = ({ location: { pathname } }) => {
   const getTime = () => {
@@ -21,52 +14,7 @@ const Header = ({ location: { pathname } }) => {
     let minutes = date.getMinutes();
     minutes = minutes < 10 ? `0${minutes}` : minutes;
 
-    return (
-      <>
-        <TimeContainer>{hours + ":" + minutes}</TimeContainer>
-      </>
-    );
-  };
-
-  const Headers = () => {
-    if (pathname === "/chats" || pathname === "/openchats") {
-      return (
-        <>
-          <ChatHeader />
-        </>
-      );
-    } else if (pathname === "/") {
-      return (
-        <>
-          <FriendHeader />
-        </>
-      );
-    } else if (pathname === "/more") {
-      return (
-        <>
-          <MoreHeader />
-        </>
-      );
-    } else if (
-      pathname === "/shap" ||
-      pathname === "/covid19" ||
-      pathname === "/kakaotv" ||
-      pathname === "/entertain" ||
-      pathname === "/fun" ||
-      pathname === "/sports"
-    ) {
-      return (
-        <>
-          <ShapHeaders />
-        </>
-      );
-    } else if (pathname === "/setting") {
-      return (
-        <>
-          <SettingHeader />
-        </>
-      );
-    }
+    return <TimeContainer>{hours + ":" + minutes}</TimeContainer>;
   };
 
   return (
@@ -86,7 +34,6 @@ const Header = ({ location: { pathname } }) => {
             </IconsItems>
           </IconContainer>
         </CommonItems>
-        {Headers()}
       </Container>
     </>
   );

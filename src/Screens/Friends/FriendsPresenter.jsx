@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { User } from "../../Components/BaseLabel";
-import Loading from "../Loading";
+import { User } from "../../Components/BaseComponent";
+import FriendsHeader from "../../Components/FriendsHeader";
 
 //images
-import Me from "../images/bori-pro.jpg";
+import Me from "../../Assets/images/bori-pro.jpg";
 
 const FriendsPresenter = ({
   title,
@@ -16,46 +16,38 @@ const FriendsPresenter = ({
   error,
 }) => {
   return (
-    <>
-      {loading ? (
-        <Loading />
-      ) : (
-        <FriendContainer>
-          <Profile>
-            <img src={Me} alt="" />
-            <User
-              name="김보리"
-              style={{ alignItems: "center", height: "100%" }}
-            />
-          </Profile>
+    <FriendContainer>
+      <FriendsHeader />
+      <Profile>
+        <img src={Me} alt="" />
+        <User name="김보리" style={{ alignItems: "center", height: "100%" }} />
+      </Profile>
 
-          <Box>
-            {Object.values(title.title).map((title, i) => {
-              return (
-                <>
-                  <FriendsMain>
-                    <FriendsText>
-                      <div>{title}</div>
-                      <div>^</div>
-                    </FriendsText>
-                    <FriendsMainHeader>
-                      <FriendsFront>
-                        <Image src={img.src[i]} />
-                        <div>{content.content[i]}</div>
-                      </FriendsFront>
-                      <FriendsRear>
-                        {num.num[i]}
-                        <div>{sign.sign[i]}</div>
-                      </FriendsRear>
-                    </FriendsMainHeader>
-                  </FriendsMain>
-                </>
-              );
-            })}
-          </Box>
-        </FriendContainer>
-      )}
-    </>
+      <Box>
+        {Object.values(title.title).map((title, i) => {
+          return (
+            <>
+              <FriendsMain>
+                <FriendsText>
+                  <div>{title}</div>
+                  <div>^</div>
+                </FriendsText>
+                <FriendsMainHeader>
+                  <FriendsFront>
+                    <Image src={img.src[i]} />
+                    <div>{content.content[i]}</div>
+                  </FriendsFront>
+                  <FriendsRear>
+                    {num.num[i]}
+                    <div>{sign.sign[i]}</div>
+                  </FriendsRear>
+                </FriendsMainHeader>
+              </FriendsMain>
+            </>
+          );
+        })}
+      </Box>
+    </FriendContainer>
   );
 };
 
