@@ -35,7 +35,7 @@ const Sports = () => {
           </a>
           <iframe
             width="100%"
-            height="100%"
+            height="350px"
             title="2021 여성 여름 컬렉션"
             src="https://play-tv.kakao.com/embed/player/cliplink/414913798?service=player_share&autoplay=1"
             scrolling="no"
@@ -43,6 +43,22 @@ const Sports = () => {
           />
         </FrameWrapper>
       </AdContants>
+      <div style={{ margin: "175px 0px" }}></div>
+      {Object.values(sports.newsTitle).map((newsTitle, i) => {
+        return (
+          <Contents className="sports-news">
+            <a href={sports.newsHerf[i]}>
+              <News>
+                <div>{newsTitle}</div>
+                <div>{sports.company[i]}</div>
+              </News>
+              <div>
+                <img src={sports.newsImg[i]} alt="" />
+              </div>
+            </a>
+          </Contents>
+        );
+      })}
     </SportsWrapper>
   );
 };
@@ -72,6 +88,9 @@ const Contents = styled.div`
     height: 77px;
     border-radius: 5px;
   }
+  ~ :last-child {
+    padding-bottom: 50px;
+  }
 `;
 const News = styled.div`
   display: flex;
@@ -91,7 +110,6 @@ const AdContants = styled.div`
   width: 100%;
   height: 100%;
   top: 330px;
-  margin-bottom: 80px;
   position: relative;
   cursor: pointer;
   top: 0;
@@ -107,7 +125,6 @@ const FrameWrapper = styled.div`
     opacity: 0.5;
     transition: all 0.5s ease-in-out;
   }
-
   :hover .ad-text {
     opacity: 1;
     color: #fefeff;

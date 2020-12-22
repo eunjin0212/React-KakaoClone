@@ -55,6 +55,7 @@ const ShapContainer = styled.div`
   box-sizing: border-box;
   padding: 15px 15px 10px 15px;
   width: 100%;
+  z-index: 2;
 `;
 const Div = styled.div`
   display: flex;

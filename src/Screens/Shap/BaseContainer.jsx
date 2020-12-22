@@ -3,6 +3,7 @@ import sports2 from "../../Assets/images/eueu.png";
 import sports3 from "../../Assets/images/ee.jpg";
 import sports4 from "../../Assets/images/sports2.jpg";
 import sports5 from "../../Assets/images/sports1.jpg";
+import sports6 from "../../Assets/images/sports6.jpg";
 
 export const sports = {
   herf: [
@@ -10,7 +11,7 @@ export const sports = {
     "https://community.v.kakao.com/v/ApKVORz3Y2",
     "https://community.v.kakao.com/v/AB27nYXxAy",
   ],
-  newHerf: [
+  newsHerf: [
     "https://www.interfootball.co.kr/news/articleView.html?idxno=514032",
     " https://www.interfootball.co.kr/news/articleView.html?idxno=513993",
     "https://v.kakao.com/v/20201222155605735",
@@ -28,5 +29,6 @@ export const sports = {
   num: [1, 2, 3],
   time: ["4시간 전", "17시간 전"],
   company: ["에펨코리아", "에펨코리아", "에펨코리아", "인터풋볼", "인터풋볼"],
-  img: [sports1, sports2, sports3, sports4, sports5],
+  img: [sports1, sports2, sports3],
+  newsImg: [sports4, sports5, sports6],
 };
