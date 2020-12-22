@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 //Image
@@ -11,8 +11,6 @@ import User from "../Assets/images/user.png";
 
 const Navigation = ({ location }) => {
   let hashs = window.location.hash;
-  console.log(window.location);
-  console.log(hashs);
   return (
     <NaviContainer>
       <Navi>

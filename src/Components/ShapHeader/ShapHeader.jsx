@@ -8,7 +8,6 @@ import Arrow from "../../Assets/images/arrow.png";
 const ShapHeader = ({ location: hash }) => {
   let hashs = window.location.hash;
   const getStyle = (path) => {
-    console.log(hashs);
     return {
       color: hashs === path ? "#191919" : "#B6B6B6",
       borderBottom: hashs === path ? "2px solid #191919" : "transparent",
