@@ -9,51 +9,56 @@ import Setting from "../Assets/images/setting.png";
 import ClickComment from "../Assets/images/clickComment.png";
 import User from "../Assets/images/user.png";
 
-// eslint-disable-next-line import/no-anonymous-default-export
-const Navigation = ({ location: { pathname } }) => {
+const Navigation = ({ location }) => {
+  let hashs = window.location.hash;
+  console.log(window.location);
+  console.log(hashs);
   return (
-    <>
-      <NaviContainer>
-        <Navi>
-          <Item aria-current={pathname === "/"}>
-            <NaviLink to="/">
-              {pathname === "/" ? (
-                <img src={clickUser} alt="" />
-              ) : (
-                <img src={User} alt="" />
-              )}
-            </NaviLink>
-          </Item>
-          <Item aria-current={pathname === "/chats"}>
-            <NaviLink to="/chats">
-              {pathname === "/chats" || pathname === "/openchats" ? (
-                <img src={ClickComment} alt="" />
-              ) : (
-                <img src={Comment} alt="" />
-              )}
-            </NaviLink>
-          </Item>
-          <Item aria-current={pathname === "/shap"}>
-            <NaviLink to="/shap">
-              {pathname === "/shap" ? (
-                <span style={{ fontWeight: "700" }}>#</span>
-              ) : (
-                <span style={{ fontWeight: "500" }}>#</span>
-              )}
-            </NaviLink>
-          </Item>
-          <Item aria-current={pathname === "/more"}>
-            <NaviLink to="/more">
-              <img src={Setting} alt="" />
-            </NaviLink>
-          </Item>
-        </Navi>
-      </NaviContainer>
-    </>
+    <NaviContainer>
+      <Navi>
+        <Item aria-current={hashs === "#/"}>
+          <NaviLink to="/">
+            {hashs === "#/" ? (
+              <img src={clickUser} alt="" />
+            ) : (
+              <img src={User} alt="" />
+            )}
+          </NaviLink>
+        </Item>
+        <Item aria-current={hashs === "#/chats"}>
+          <NaviLink to="/chats" replace>
+            {hashs === "#/chats" || hashs === "#/chats/openchats" ? (
+              <img src={ClickComment} alt="" />
+            ) : (
+              <img src={Comment} alt="" />
+            )}
+          </NaviLink>
+        </Item>
+        <Item aria-current={hashs === "#/shap"}>
+          <NaviLink to="/shap">
+            {hashs === "#/shap" ||
+            hashs === "#/shap/covid19" ||
+            hashs === "#/shap/kakaotv" ||
+            hashs === "#/shap/fun" ||
+            hashs === "#/shap/entertain" ||
+            hashs === "#/shap/sport" ? (
+              <span style={{ fontWeight: "700" }}>#</span>
+            ) : (
+              <span style={{ fontWeight: "500" }}>#</span>
+            )}
+          </NaviLink>
+        </Item>
+        <Item aria-current={hashs === "#/more"}>
+          <NaviLink to="/more">
+            <img src={Setting} alt="" />
+          </NaviLink>
+        </Item>
+      </Navi>
+    </NaviContainer>
   );
 };
 
-export default withRouter(Navigation);
+export default Navigation;
 const NaviContainer = styled.div`
   position: fixed;
   bottom: -2px;

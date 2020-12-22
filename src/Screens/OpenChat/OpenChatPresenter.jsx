@@ -1,15 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import ChatHeader from "../../Components/ChatHeader";
-import Ad from "../../Assets/images/ad.jpg";
 
-const ChatsPresenter = ({ title, content, time, image, icons, member }) => {
+const OpenChatPresenter = ({ title, image, content, time, icons, member }) => {
+  console.log(OpenChatPresenter);
   return (
     <Wrapper>
       <ChatHeader />
-      <AdContainer>
-        <img src={Ad} alt="" />
-      </AdContainer>
       {Object.values(title.title).map((title, i) => {
         return (
           <Profile>
@@ -19,7 +16,6 @@ const ChatsPresenter = ({ title, content, time, image, icons, member }) => {
                 <MeChatContainer>
                   <div style={{ marginRight: "5px" }}>{title}</div>
                   <span>{member.num[i]}</span>
-                  <img src={icons.pin[i]} alt="" />
                   <img src={icons.bell[i]} alt="" />
                 </MeChatContainer>
                 <MeChat>{content.message[i]}</MeChat>
@@ -32,8 +28,7 @@ const ChatsPresenter = ({ title, content, time, image, icons, member }) => {
     </Wrapper>
   );
 };
-export default ChatsPresenter;
-
+export default OpenChatPresenter;
 const Wrapper = styled.div`
   width: 100%;
   position: absolute;
@@ -41,18 +36,6 @@ const Wrapper = styled.div`
   padding: 15px;
   display: flex;
   flex-direction: column;
-`;
-const AdContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  img {
-    position: relative;
-    height: 90px;
-    width: 100%;
-    border-radius: 10px;
-  }
-  margin-bottom: 20px;
 `;
 const Profile = styled.div`
   display: flex;
@@ -84,7 +67,6 @@ const MeChatContainer = styled.div`
     color: #9a9a9a;
   }
 `;
-
 const MeChat = styled.div`
   font-size: 12px;
   color: #9a9a9a;

@@ -6,7 +6,8 @@ import ShapHeader from "../../Components/ShapHeader";
 import Ad from "../../Assets/images/ad.jpg";
 import News1 from "../../Assets/images/news1.png";
 
-const News = ({ loading, error }) => {
+const News = ({ match }) => {
+  console.log(News);
   const newsStyle = () => {
     return {
       fontSize: "13px",
@@ -16,7 +17,7 @@ const News = ({ loading, error }) => {
   };
   return (
     <NewsContainer>
-      <ShapHeader />
+      <ShapHeader match={match} />
       <AdContainer>
         <img src={Ad} alt="" />
       </AdContainer>
@@ -62,6 +63,7 @@ const NewsContainer = styled.div`
   padding: 15px;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 `;
 const AdContainer = styled.div`
   width: 100%;
@@ -96,7 +98,6 @@ const NewsBox = styled.div`
   grid-template-columns: repeat(2, 1fr);
   font-size: 13px;
   justify-content: center;
-  width: 100%;
   column-gap: 10px;
 `;
 const NewsPhoto = styled.div`
@@ -114,4 +115,3 @@ const NewsPhoto = styled.div`
   span {
   }
 `;
-const Weather = styled.div``;

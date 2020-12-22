@@ -71,15 +71,13 @@ const SettingContainer = () => {
   }, [getData]);
 
   return (
-    <>
-      <SettingPresenter
-        title={title}
-        content={content}
-        icons={icons}
-        error={error}
-        loading={loading}
-      />
-    </>
+    <SettingPresenter
+      title={title}
+      content={content}
+      icons={icons}
+      error={error}
+      loading={loading}
+    />
   );
 };
 

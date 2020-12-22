@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Container } from "../BaseComponent";
 import OpenChat from "../../Assets/images/openChat.png";
@@ -7,21 +7,22 @@ import Search from "../../Assets/images/search.png";
 import Music from "../../Assets/images/music.png";
 import Cog from "../../Assets/images/cog.png";
 
-const ChatHeaders = ({ location: { pathname } }) => {
+const ChatHeaders = ({ location: hash }) => {
+  let hashs = window.location.hash;
   const getStyle = (path) => {
     return {
-      color: pathname === path ? "#191919" : "#B6B6B6",
+      color: hashs === path ? "#191919" : "#B6B6B6",
     };
   };
   return (
     <Chat>
       <Div>
         <ChatMenu>
-          <ChatLinks to="/chats" style={getStyle("/chats")}>
-            <Container current={pathname === "/chats"} title="채팅" />
+          <ChatLinks to="/chats">
+            <Container title="채팅" style={getStyle("#/chats")} />
           </ChatLinks>
-          <ChatLinks to="/openchats" style={getStyle("/openchats")}>
-            <Container current={pathname === "/openchats"} title="오픈채팅" />
+          <ChatLinks to="/chats/openchats">
+            <Container title="오픈채팅" style={getStyle("#/chats/openchats")} />
           </ChatLinks>
         </ChatMenu>
 
@@ -30,16 +31,16 @@ const ChatHeaders = ({ location: { pathname } }) => {
           {<img src={OpenChat} width="18px" height="18px" alt="" />}
           {<img src={Music} width="18px" height="18px" alt="" />}
           {
-            <Links to="/setting" current={pathname === "/setting"}>
+            <ChatLinks to="/setting">
               <img src={Cog} width="18px" height="18px" alt="" />
-            </Links>
+            </ChatLinks>
           }
         </ChatIcons>
       </Div>
     </Chat>
   );
 };
-export default withRouter(ChatHeaders);
+export default ChatHeaders;
 
 const Chat = styled.div`
   position: fixed;
@@ -71,4 +72,3 @@ const ChatIcons = styled.div`
   }
 `;
 const ChatLinks = styled(Link)``;
-const Links = styled(Link)``;

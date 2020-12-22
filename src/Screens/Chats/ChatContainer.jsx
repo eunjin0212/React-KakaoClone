@@ -8,7 +8,6 @@ import User from "../../Assets/images/profile.png";
 const ChatContainer = () => {
   const title = {
     title: ["MEMO", "김은진", "단톡방"],
-    open: ["단톡방1", "단톡방2"],
   };
   const image = {
     src: [Me, User],
@@ -26,16 +25,17 @@ const ChatContainer = () => {
   const member = {
     num: ["", "", 6],
   };
-
   return (
-    <ChatsPresenter
-      title={title}
-      content={content}
-      time={time}
-      image={image}
-      icons={icons}
-      member={member}
-    />
+    <>
+      <ChatsPresenter
+        title={title}
+        content={content}
+        time={time}
+        image={image}
+        icons={icons}
+        member={member}
+      />
+    </>
   );
 };
 

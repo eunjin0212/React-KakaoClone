@@ -27,6 +27,7 @@
 > - [o] Shap Screen, More Screen 날씨 API받기
 > - [△] More Screen Carousel 구현(슬라이더)
 > - [ ] Carousel 이미지에 링크 걸기
+> - [ ] 단톡방 이미지
 
 ```
 <a href="http://pf.kakao.com/_ZRQBh/60888445">{img1}</a>

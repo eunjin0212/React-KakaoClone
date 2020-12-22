@@ -10,29 +10,44 @@ import Navgation from "../Components/Navgation";
 import StatusBar from "../Components/StatusBar";
 import Friends from "../Screens/Friends";
 import Chats from "../Screens/Chats";
-import Shap from "../Components/ShapHeader/ShapHeader";
+import News from "../Screens/Shap/News";
 import More from "../Screens/More";
 import Setting from "../Screens/Setting";
-import OpenChat from "../Screens/Chats/OpenChat";
+import OpenChat from "../Screens/OpenChat";
+import Covid19 from "../Screens/Shap/Covid19";
+import KakaoTV from "../Screens/Shap/KakaoTV";
+import Entertain from "../Screens/Shap/Entertain";
+import Fun from "../Screens/Shap/Fun";
+import Sport from "../Screens/Shap/Sport";
 
-// eslint-disable-next-line import/no-anonymous-default-export
 const Routers = () => {
   return (
-    <>
-      <Router>
-        <StatusBar />
-        <Switch>
-          <Route path="/" exact component={Friends} />
-          <Route path="/chats" component={Chats} />
-          <Route path="/shap" component={Shap} />
-          <Route path="/more" component={More} />
-          <Route path="/setting" component={Setting} />
-          <Route path="/openchats" component={OpenChat} />
-          <Redirect from="*" to="/" />
-        </Switch>
-        <Navgation />
-      </Router>
-    </>
+    <Router>
+      <StatusBar />
+      <Switch>
+        <Route path="/" exact component={Friends} />
+        <Route path="/chats">
+          <Switch>
+            <Route path="/chats" exact component={Chats} />
+            <Route path="/chats/openchats" component={OpenChat} />
+          </Switch>
+        </Route>
+        <Route path="/shap">
+          <Switch>
+            <Route path="/shap/covid19" component={Covid19} />
+            <Route path="/shap" exact component={News} />
+            <Route path="/shap/kakaotv" component={KakaoTV} />
+            <Route path="/shap/fun" component={Fun} />
+            <Route path="/shap/entertain" component={Entertain} />
+            <Route path="/shap/sport" component={Sport} />
+          </Switch>
+        </Route>
+        <Route path="/more" component={More} />
+        <Route path="/setting" component={Setting} />
+        <Redirect from="*" to="/" />
+      </Switch>
+      <Navgation />
+    </Router>
   );
 };
 
