@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import ShapHeader from "../../Components/ShapHeader";
 import { sports } from "./BaseContainer";
+import { BasePost } from "../../Components/BaseComponent";
 
 const Sports = () => {
   return (
@@ -50,7 +51,7 @@ const Sports = () => {
             <a href={sports.newsHerf[i]}>
               <News>
                 <div>{newsTitle}</div>
-                <div>{sports.company[i]}</div>
+                <div>{sports.newsCompany[i]}</div>
               </News>
               <div>
                 <img src={sports.newsImg[i]} alt="" />

@@ -26,9 +26,54 @@ export const sports = {
     '"푸스카스다!"SON 드리블에 장난기 발동한 토트넘 선수들.. 빵⋯',
     '호날두는 천적으로 A.콜 꼽았지만.. "난 메시가 까다로웠어"',
   ],
-  num: [1, 2, 3],
-  time: ["4시간 전", "17시간 전"],
-  company: ["에펨코리아", "에펨코리아", "에펨코리아", "인터풋볼", "인터풋볼"],
+  company: ["에펨코리아", "에펨코리아", "에펨코리아"],
+  newsCompany: ["인터풋볼", "인터풋볼", "인터풋볼"],
   img: [sports1, sports2, sports3],
   newsImg: [sports4, sports5, sports6],
+};
+export const entertain = {
+  title: ["연애기사"],
+};
+export const fun = {
+  title: [
+    "공차 빨리 먹기 대회 우승자.gif",
+    "수학쌤 프사인데 어이없음ㅋㅋ",
+    "미란이가 최근에 한 FLEX",
+    "짧은 교복치마의 비밀.jpg",
+    "탁재훈 두 번 죽였던 김종국 대상 수상소감ㅋㅋㅋ",
+  ],
+  href: [
+    "https://m.cafe.daum.net/dotax/Elgq/3504730?svc=kakaotalkTab",
+    "https://story.kakao.com/ch/funnybro/K332tNW7XuA,",
+    "https://m.cafe.daum.net/dotax/Elgq/3507703?svc=kakaotalkTab",
+    "https://community.v.kakao.com/v/ALjjQZEf5F",
+    "https://1boon.kakao.com/sbsnoriter/5fe006778e39ad6af826a4f6?view=katalk",
+  ],
+  bottomHref: [
+    "https://1boon.kakao.com/forsnap/5fe157822f1b3e12b3c1e8c9?view=katalk",
+    "https://m.cafe.daum.net/truepicture/Qt7/1235075?svc=kakaotalkTab",
+    "https://1boon.kakao.com/forsnap/5fe15d202f1b3e12b3c1e8fd?view=katalk",
+  ],
+  bottomSrc: [
+    "https://img1.daumcdn.net/thumb/R720x0/?fname=https://t1.daumcdn.net/news/202012/18/spotvnews/20201218194605276gnev.jpg",
+    "https://t1.daumcdn.net/cafeattach/1YmK3/b9112b857aeaa1a0e798e7b6e6b8afe339a8ef36",
+    "https://img1.daumcdn.net/thumb/R720x0/?fname=https://t1.daumcdn.net/news/202012/22/newsen/20201222100935131temp.jpg",
+  ],
+  bottomompany: [
+    "연합뉴스",
+    "엽기 혹은 진실 (세상 모든 즐거움이 모이는 곳)",
+    "뉴스엔",
+  ],
+  bottomTitle: [
+    "인간관계 정리한다며 망치로 폰 부순 구혜선 근황",
+    "[유머] 영화 신세계에 해리포터 자막 돌린 결과",
+    "조용하던 안재현, 뜻밖의 인물과 찍힌 영상 공개",
+  ],
+};
+
+export const kakaoTv = {
+  title: ["kakaoTv"],
+};
+export const covid19 = {
+  title: ["covid19"],
 };

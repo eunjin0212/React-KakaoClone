@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 
 //Image
@@ -56,7 +56,7 @@ const Navigation = ({ location }) => {
   );
 };
 
-export default Navigation;
+export default withRouter(Navigation);
 const NaviContainer = styled.div`
   position: fixed;
   bottom: -2px;

@@ -38,20 +38,20 @@ const News = ({ match }) => {
         title="'코로나 전사'지원한 국시거부 의대생들..'정부와 화해 모드'"
         style={newsStyle()}
       />
-      <NewsBox>
-        <NewsPhoto>
+      <PhotoContents>
+        <PhotoWrapper>
           <a href="  https://imnews.imbc.com/replay/2020/nwdesk/article/6026449_32524.html">
             <img src={News1} alt="" />
             <span>'예배 끝나고 식사'무더기 확진.. 교도소까지 곳곳 감염</span>
           </a>
-        </NewsPhoto>
-        <NewsPhoto>
+        </PhotoWrapper>
+        <PhotoWrapper>
           <a href="  https://imnews.imbc.com/replay/2020/nwdesk/article/6026449_32524.html">
             <img src={News1} alt="" />
             <span>'예배 끝나고 식사'무더기 확진.. 교도소까지 곳곳 감염</span>
           </a>
-        </NewsPhoto>
-      </NewsBox>
+        </PhotoWrapper>
+      </PhotoContents>
     </NewsContainer>
   );
 };
@@ -93,14 +93,14 @@ const Covid = styled.div`
     font-size: 10px;
   }
 `;
-const NewsBox = styled.div`
+const PhotoContents = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   font-size: 13px;
   justify-content: center;
   column-gap: 10px;
 `;
-const NewsPhoto = styled.div`
+const PhotoWrapper = styled.div`
   width: 100%;
   a {
     display: flex;

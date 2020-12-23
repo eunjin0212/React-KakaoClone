@@ -27,6 +27,7 @@ User.propTypes = {
   name: PropTypes.node,
   children: PropTypes.node,
 };
+
 const Items = styled.div``;
 const Title = styled.div`
   font-size: 20px;
