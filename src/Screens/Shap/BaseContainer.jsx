@@ -32,7 +32,22 @@ export const sports = {
   newsImg: [sports4, sports5, sports6],
 };
 export const entertain = {
-  title: ["연애기사"],
+  title: [
+    "자가 격리 중 임영웅, 깜짝 놀랄 만큼 확 변한 모습",
+    "김나영-이시영, 아무나 받기 힘든 명품백 선물받고 인증샷",
+    "드라마 종영 1년 후 전해진 아이유·여진구 관련 설레는 소식",
+  ],
+  herf: [
+    "https://1boon.kakao.com/forsnap/5fe1e2398e39ad6af826b624?view=katalk",
+    "https://1boon.kakao.com/fashionn/5fdc095b7407513e6466ffbb",
+    "https://1boon.kakao.com/forsnap/5fe1e4457407513e64671e80?view=katalk",
+  ],
+  img: [
+    "https://img1.daumcdn.net/thumb/R720x0/?fname=https://t1.daumcdn.net/news/202012/22/kukminilbo/20201222161449727vjaq.jpg",
+    "https://img1.daumcdn.net/thumb/R720x0/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fliveboard%2Ffashionn%2Fff6730335ad745b1a27d67a5a879a877.JPG",
+    "https://img1.daumcdn.net/thumb/R720x0/?fname=https://t1.daumcdn.net/news/202012/22/startoday/20201222163924872ronb.jpg",
+  ],
+  company: ["답사고", "패션엔", "답사고"],
 };
 export const fun = {
   title: [
