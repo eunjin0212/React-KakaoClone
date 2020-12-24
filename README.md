@@ -28,8 +28,6 @@
 > - [△] More Screen Carousel 구현(슬라이더)
 > - [ ] Carousel 이미지에 링크 걸기
 > - [ ] 단톡방 이미지
-> - [ ] Shap Screen 검색창 만들기
-> - [ ] KakaoTV 영상 리스트 만들기
 
 ```
 <a href="http://pf.kakao.com/_ZRQBh/60888445">{img1}</a>
@@ -37,6 +35,9 @@
 <a herf="https://brunch.co.kr/@andkakao/204">{img3}</a>
 <a herf="https://brunch.co.kr/@andkakao/202">{img4}</a>
 ```
+
+> - [ ] Shap Screen 검색창 만들기
+> - [ ] KakaoTV 영상 리스트 만들기
 
 ### Other
 

@@ -48,6 +48,7 @@ export const entertain = {
     "https://img1.daumcdn.net/thumb/R720x0/?fname=https://t1.daumcdn.net/news/202012/22/startoday/20201222163924872ronb.jpg",
   ],
   company: ["답사고", "패션엔", "답사고"],
+  videoUrl: ["https://www.youtube.com/embed/nulT3_l3D9U"],
 };
 export const fun = {
   title: [

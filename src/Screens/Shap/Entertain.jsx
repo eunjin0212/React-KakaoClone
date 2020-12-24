@@ -5,6 +5,10 @@ import { entertain } from "./BaseContainer";
 import share from "../../Assets/images/share.png";
 
 const Entertain = () => {
+  const clickHandle = (style) => {
+    return (style = { border: "2px solid #FBE20F" });
+  };
+
   return (
     <EnterWrapper>
       <ShapHeader />
@@ -25,27 +29,83 @@ const Entertain = () => {
       })}
       <VideoWrapper>
         <VideoHeader>
-          <span>카카오TV오리지널</span>
+          <span>카카오TV 오리지널</span>
           <div>
             <img src={share} alt="" />
           </div>
         </VideoHeader>
-        <iframe
-          title="찐경규"
-          width="100%"
-          height="315"
-          src="https://www.youtube.com/embed/nulT3_l3D9U"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        />
+        <MainVideo>
+          <iframe
+            title="찐경규"
+            width="100%"
+            height="100%"
+            src={`${"https://www.youtube.com/embed/nulT3_l3D9U"}`}
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          />
+        </MainVideo>
+
         <VideoList>
-          <div>영상1</div>
-          <div>영상2</div>
-          <div>영상3</div>
-          <div>영상4</div>
-          <div>영상5</div>
-          <div>더보기</div>
+          <Video onClick={clickHandle()}>
+            {/* <iframe
+              id="mainVideo"
+              title="찐경규 고독한 톡방"
+              width="125"
+              height="80"
+              src="https://www.youtube.com/embed/LcfXj2HJIyY"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            /> */}
+            <span>찐경규</span>
+          </Video>
+          <Video>
+            {/* <iframe
+              title="videoList"
+              width="125"
+              height="80"
+              src="https://www.youtube.com/embed/r-UQJRaZd5M"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            /> */}
+          </Video>
+          <Video>
+            {/* <iframe
+              title="며느라기"
+              width="125"
+              height="80"
+              src="https://www.youtube.com/embed/iJeTMgHLIcA"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            /> */}
+            <span>며느라기</span>
+          </Video>
+          <Video>
+            {/* <iframe
+              title="도시남녀"
+              width="125"
+              height="80"
+              src="https://www.youtube.com/embed/nUoTvAFThK4"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            /> */}
+            <span>도시남녀</span>
+          </Video>
+          <Video>
+            {/* <iframe
+              title="런웨이"
+              width="125"
+              height="80"
+              src="https://www.youtube.com/embed/9w1WAQPbGNY"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            /> */}
+            <span>런웨이</span>
+          </Video>
+          <MoreView>더보기</MoreView>
         </VideoList>
       </VideoWrapper>
     </EnterWrapper>
@@ -69,9 +129,6 @@ const Contents = styled.div`
     justify-content: space-between;
     padding: 10px 0px;
   }
-  /* ~ :last-child {
-    padding-bottom: 50px;
-  } */
   img {
     width: 110px;
     height: 77px;
@@ -94,7 +151,9 @@ const News = styled.div`
     font-size: 12px;
   }
 `;
-const VideoWrapper = styled.div``;
+const VideoWrapper = styled.div`
+  margin-bottom: 80px;
+`;
 const VideoHeader = styled.div`
   display: flex;
   justify-content: space-between;
@@ -108,12 +167,33 @@ const VideoHeader = styled.div`
     height: 20px;
   }
 `;
+const MainVideo = styled.div`
+  margin: 0px -15px;
+  padding-bottom: 10px;
+  display: flex;
+  height: 350px;
+`;
 const VideoList = styled.div`
   display: flex;
   box-sizing: content-box;
-  overflow-y: hidden;
+  overflow-x: hidden;
   white-space: nowrap;
   scroll-behavior: smooth;
   scrollbar-color: white;
   cursor: pointer;
+`;
+const Video = styled.button`
+  display: flex;
+  flex-direction: column;
+  background: inherit;
+  border: none;
+  :not(:last-child) {
+    margin-right: 10px;
+  }
+  iframe {
+    border-radius: 10px;
+  }
+`;
+const MoreView = styled.button`
+  border: 1px solid gray;
 `;
