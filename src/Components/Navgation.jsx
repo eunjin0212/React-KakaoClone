@@ -36,7 +36,6 @@ const Navigation = ({ location }) => {
           <NaviLink to="/shap">
             {hashs === "#/shap" ||
             hashs === "#/shap/covid19" ||
-            hashs === "#/shap/kakaotv" ||
             hashs === "#/shap/fun" ||
             hashs === "#/shap/entertain" ||
             hashs === "#/shap/sport" ? (

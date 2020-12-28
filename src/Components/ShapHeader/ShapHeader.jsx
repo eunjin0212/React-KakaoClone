@@ -18,14 +18,8 @@ const ShapHeader = ({ location: hash }) => {
     <ShapContainer>
       <Div>
         <ShapMenu>
-          <ShapLinks to="/shap/covid19">
-            <Container title="코로나19" style={getStyle("#/shap/covid19")} />
-          </ShapLinks>
           <ShapLinks to="/shap">
             <Container title="뉴스" style={getStyle("#/shap")} />
-          </ShapLinks>
-          <ShapLinks to="/shap/kakaotv">
-            <Container title="카카오TV" style={getStyle("#/shap/kakaotv")} />
           </ShapLinks>
           <ShapLinks to="/shap/fun">
             <Container title="FUN" style={getStyle("#/shap/fun")} />
@@ -53,7 +47,7 @@ const ShapContainer = styled.div`
   top: 50px;
   left: 0;
   box-sizing: border-box;
-  padding: 15px 15px 10px 15px;
+  padding: 15px 15px 5px 15px;
   width: 100%;
   z-index: 2;
 `;

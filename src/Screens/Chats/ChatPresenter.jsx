@@ -37,7 +37,7 @@ export default ChatsPresenter;
 const Wrapper = styled.div`
   width: 100%;
   position: absolute;
-  top: 100px;
+  top: 90px;
   padding: 15px;
   display: flex;
   flex-direction: column;

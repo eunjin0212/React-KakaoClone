@@ -56,7 +56,7 @@ export default FriendsPresenter;
 const FriendContainer = styled.div`
   width: 100%;
   position: relative;
-  top: 100px;
+  top: 90px;
   padding: 15px;
 `;
 const Profile = styled.div`

@@ -87,9 +87,6 @@ export const fun = {
   ],
 };
 
-export const kakaoTv = {
-  title: ["kakaoTv"],
-};
 export const covid19 = {
   title: ["covid19"],
 };

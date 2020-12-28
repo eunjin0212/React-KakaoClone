@@ -79,7 +79,7 @@ const FunWrapper = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
-  top: 100px;
+  top: 90px;
   padding: 15px;
   display: flex;
   flex-direction: column;

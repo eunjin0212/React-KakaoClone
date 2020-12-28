@@ -80,11 +80,11 @@ export default DetailPresenter;
 const DetailContainer = styled.div`
   width: 100%;
   position: absolute;
-  top: 100px;
+  top: 90px;
   padding: 15px;
   display: flex;
   flex-direction: column;
-  box-sizing: content-box;
+  box-sizing: border-box;
 `;
 const Div = styled.div`
   width: 100%;

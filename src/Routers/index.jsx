@@ -14,8 +14,6 @@ import News from "../Screens/Shap/News";
 import More from "../Screens/More";
 import Setting from "../Screens/Setting";
 import OpenChat from "../Screens/OpenChat";
-import Covid19 from "../Screens/Shap/Covid19";
-import KakaoTV from "../Screens/Shap/KakaoTV";
 import Entertain from "../Screens/Shap/Entertain";
 import Fun from "../Screens/Shap/Fun";
 import Sport from "../Screens/Shap/Sport";
@@ -34,9 +32,7 @@ const Routers = () => {
         </Route>
         <Route path="/shap">
           <Switch>
-            <Route path="/shap/covid19" component={Covid19} />
             <Route path="/shap" exact component={News} />
-            <Route path="/shap/kakaotv" component={KakaoTV} />
             <Route path="/shap/fun" component={Fun} />
             <Route path="/shap/entertain" component={Entertain} />
             <Route path="/shap/sport" component={Sport} />
