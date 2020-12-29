@@ -183,6 +183,7 @@ const StyleHeader = styled.div`
   }
   img {
     width: 20px;
+    height: 20px;
     border-radius: 50%;
     :last-child {
       border: 1px solid #e7e7e7;
