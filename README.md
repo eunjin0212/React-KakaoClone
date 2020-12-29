@@ -1,6 +1,7 @@
 # React-KakaoClone
 
 개쩌는 카카오톡을 만들어보자
+[Go to Kakao](https://reactkakao.netlify.app/)
 
 ## Conditions
 
