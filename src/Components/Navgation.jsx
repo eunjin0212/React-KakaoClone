@@ -35,7 +35,7 @@ const Navigation = ({ location }) => {
         <Item aria-current={hashs === "#/shap"}>
           <NaviLink to="/shap">
             {hashs === "#/shap" ||
-            hashs === "#/shap/covid19" ||
+            hashs === "#/shap/shopping" ||
             hashs === "#/shap/fun" ||
             hashs === "#/shap/entertain" ||
             hashs === "#/shap/sport" ? (

@@ -11,6 +11,7 @@ import StatusBar from "../Components/StatusBar";
 import Friends from "../Screens/Friends";
 import Chats from "../Screens/Chats";
 import News from "../Screens/Shap/News";
+import Shopping from "../Screens/Shap/Shopping";
 import More from "../Screens/More";
 import Setting from "../Screens/Setting";
 import OpenChat from "../Screens/OpenChat";
@@ -33,6 +34,7 @@ const Routers = () => {
         <Route path="/shap">
           <Switch>
             <Route path="/shap" exact component={News} />
+            <Route path="/shap/shopping" component={Shopping} />
             <Route path="/shap/fun" component={Fun} />
             <Route path="/shap/entertain" component={Entertain} />
             <Route path="/shap/sport" component={Sport} />

@@ -21,6 +21,9 @@ const ShapHeader = ({ location: hash }) => {
           <ShapLinks to="/shap">
             <Container title="뉴스" style={getStyle("#/shap")} />
           </ShapLinks>
+          <ShapLinks to="/shap/shopping">
+            <Container title="쇼핑" style={getStyle("#/shap/shopping")} />
+          </ShapLinks>
           <ShapLinks to="/shap/fun">
             <Container title="FUN" style={getStyle("#/shap/fun")} />
           </ShapLinks>

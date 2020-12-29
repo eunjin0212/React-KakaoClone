@@ -4,6 +4,17 @@ import sports3 from "../../Assets/images/ee.jpg";
 import sports4 from "../../Assets/images/sports2.jpg";
 import sports5 from "../../Assets/images/sports1.jpg";
 import sports6 from "../../Assets/images/sports6.jpg";
+import talkDeal1 from "../../Assets/images/talkDeal1.png";
+import talkDeal2 from "../../Assets/images/talkDeal2.png";
+import talkDeal3 from "../../Assets/images/talkDeal3.png";
+import shopping1 from "../../Assets/images/shopping1.png";
+import shopping2 from "../../Assets/images/shopping2.png";
+import style1 from "../../Assets/images/style1.jpg";
+import style2 from "../../Assets/images/style2.jpg";
+import style3 from "../../Assets/images/style3.jpg";
+import style4 from "../../Assets/images/style4.png";
+import style5 from "../../Assets/images/style5.jpg";
+import style6 from "../../Assets/images/style6.png";
 
 export const sports = {
   herf: [
@@ -87,6 +98,58 @@ export const fun = {
   ],
 };
 
-export const covid19 = {
-  title: ["covid19"],
+export const shopping = {
+  title: [
+    "자일렉 컵 와플 메이커 누릉지, 해쉬브라운까지 다양하게",
+    "아이더 프리미엄 구스 롤다운 남녀공용, 그레이/네이비",
+    "마크모크 인기 슈즈 30종 메리제인/미들힐/플랫,부츠",
+    "KF94 블랙 마스크 100매 국내생산, 식약처 인증",
+  ],
+  href: [
+    "https://store.kakao.com/mamc0906/products/75371142?_=1609216245215&docId=N11451901980",
+    "https://store.kakao.com/lottemia/products/74914400",
+    "https://store.kakao.com/macmoc/products/49669086",
+    "https://store.kakao.com/lilit/products/68706083",
+  ],
+  src: [
+    talkDeal1,
+    "https://st.kakaocdn.net/thumb/P750x750/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fshoppingstore%2Fproduct%2F20201221131915_f45dd730c1c1412b888b5b75bfb53382.jpg",
+    talkDeal2,
+    talkDeal3,
+  ],
+  purchase: ["227명 참여중", "399명 참여중", "190명 참여중", "999+명 참여중"],
+  deal: [
+    "톡딜가 23,900원",
+    "톡딜가 103,000원",
+    "톡딜가 29,900원",
+    "톡딜가 33,900원",
+  ],
+  adTitle: ["미리 준비하는 2021년", "바닥에서 고생하는 허리에게"],
+  adHref: [
+    "https://store.kakao.com/bs/products/74009027",
+    "https://m.shoppinghow.kakao.com/m/event/detail/29947",
+  ],
+  content: [
+    "유난히 다사다난했던 올해. 2021년은 행복하길 바라는 마음을 담아 한자 한자 적어봅니다.",
+    "좌식 테이블에 앉아 집중하다 보면 점점 굽어지는 허리. 잠시 쉴수 있도록 기댈곳을 만들어주세요.",
+  ],
+  adSrc: [shopping1, shopping2],
+  styleStore: ["더옷장", "더우먼", "쥬엔", "미나 그램", "다니러브", "피핀"],
+  styleTitle: [
+    "바이에른 울 V롱베스트원피스",
+    "파운드 양털 코트",
+    "페이크 퍼안감 사파리패딩점퍼",
+    "메프린 체크 배색 니트···",
+    "아일랜드 기모죠거팬츠",
+    "다이아 패턴 울 니트",
+  ],
+  styleSrc: [style1, style2, style3, style4, style5, style6],
+  styleHref: [
+    "http://theozzang.com/product/detail.html?product_no=14647&cate_no=73&display_group=1",
+    "http://thewoman.kr/product/detail.html?product_no=7093&cate_no=43&display_group=1",
+    "https://jooen.com/product/%ED%8E%98%EC%9D%B4%ED%81%AC-%ED%8D%BC-%EC%95%88%EA%B0%90-%EC%82%AC%ED%8C%8C%EB%A6%AC-%ED%8C%A8%EB%94%A9-%EC%A0%90%ED%8D%BC%ED%95%9C%EC%A0%95%EC%88%98%EB%9F%89-35sale-5577%EC%A3%BC%EB%AC%B8%ED%8F%AD%EC%A3%BC/29155/category/26/display/1/",
+    "https://mina-gram.com/product/%EB%A9%94%ED%94%84%EB%A6%B0-%EC%B2%B4%ED%81%AC-%EB%B0%B0%EC%83%89-%EB%8B%88%ED%8A%B8-%EC%9B%90%ED%94%BC%EC%8A%A4/11117/category/44/display/1/",
+    "https://www.danilove.co.kr/shop/shopdetail.html?branduid=102196&search=%25B1%25E2%25B8%25F0%25C1%25D2%25B0%25C5&sort=order&xcode=037&mcode=003&scode=&GfDT=bmh3UQ%3D%3D",
+    "http://www.pippin.co.kr/shop/shopdetail.html?branduid=223521&search=%25B4%25D9%25C0%25CC%25BE%25C6&sort=order&xcode=026&mcode=001&scode=&GfDT=Z2d3UQ%3D%3D",
+  ],
 };

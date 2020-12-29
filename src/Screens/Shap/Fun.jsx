@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import ShapHeader from "../../Components/ShapHeader";
 import { fun } from "./BaseContainer";
-import { BasePost } from "../../Components/BaseComponent";
 import fun1 from "../../Assets/images/fun1.png";
 import fun2 from "../../Assets/images/fun2.jpg";
 

@@ -26,6 +26,8 @@ const News = ({ match }) => {
         <span>▲ 1,030</span>
         <span>12.13 0시 기준</span>
       </Covid>
+      <Divider id="divider"></Divider>
+
       <Container
         title="신규확진 1천명 넘어..인구 몰린 수도권, 집단감염 '급속도'"
         style={newsStyle()}
@@ -79,7 +81,6 @@ const AdContainer = styled.div`
 `;
 const Covid = styled.div`
   align-items: center;
-  border-bottom: 9px solid #efefef;
   padding-bottom: 15px;
   span:not(:last-child) {
     font-size: 14px;
@@ -92,6 +93,11 @@ const Covid = styled.div`
     color: #9c9c9c;
     font-size: 10px;
   }
+`;
+const Divider = styled.div`
+  height: 15px;
+  margin: 0px -15px;
+  border-bottom: 10px solid #efefef;
 `;
 const PhotoContents = styled.div`
   display: grid;

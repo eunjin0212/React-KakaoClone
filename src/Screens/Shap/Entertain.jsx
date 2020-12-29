@@ -10,7 +10,7 @@ const Entertain = () => {
   };
 
   return (
-    <EnterWrapper>
+    <EnterContainer>
       <ShapHeader />
       {Object.values(entertain.title).map((title, i) => {
         return (
@@ -108,11 +108,11 @@ const Entertain = () => {
           <MoreView>더보기</MoreView>
         </VideoList>
       </VideoWrapper>
-    </EnterWrapper>
+    </EnterContainer>
   );
 };
 export default Entertain;
-const EnterWrapper = styled.div`
+const EnterContainer = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
